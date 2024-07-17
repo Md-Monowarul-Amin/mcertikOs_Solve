@@ -5254,7 +5254,7 @@ void seg_init(void)
     extern uint8_t end[], edata[];
     memzero(edata, bsp_kstack - edata);
   103071:	8d b3 00 e0 06 00    	lea    0x6e000(%ebx),%esi
-  103077:	c7 c0 74 27 13 00    	mov    $0x132774,%eax
+  103077:	c7 c0 38 27 13 00    	mov    $0x132738,%eax
   10307d:	89 f2                	mov    %esi,%edx
   10307f:	29 c2                	sub    %eax,%edx
   103081:	52                   	push   %edx
