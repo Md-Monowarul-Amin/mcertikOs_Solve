@@ -3,6 +3,9 @@
 #include <lib/monitor.h>
 #include <vmm/MPTInit/export.h>
 #include <vmm/MPTKern/export.h>
+// #include <pmm/MContainer/test.c>
+// #include <vmm/MPTIntro/test.c>
+
 
 #define NUM_CHAN     64
 #define TD_STATE_RUN 1
@@ -19,6 +22,8 @@ extern bool test_MPTNew(void);
 static void kern_main(void)
 {
     KERN_DEBUG("In kernel main.\n\n");
+
+// #define TEST 1
 
 #ifdef TEST
     dprintf("Testing the MContainer layer...\n");

@@ -14,7 +14,11 @@ void pdir_init_kern(unsigned int mbi_addr)
     pdir_init(mbi_addr);
 
     //TODO
-}
+    for(unsigned int pde_index = 0; pde_index < 1024; pde_index ++){
+        set_pdir_entry_identity(0, pde_index);
+    }
+
+}   
 
 /**
  * Maps the physical page # [page_index] for the given virtual address with the given permission.
@@ -28,7 +32,18 @@ unsigned int map_page(unsigned int proc_index, unsigned int vaddr,
                       unsigned int page_index, unsigned int perm)
 {
     // TODO
-    return 0;
+    unsigned int pde_entry = get_pdir_entry_by_va(proc_index, vaddr);
+    unsigned int pde_page_index = pde_entry >> 12;
+
+    if (pde_entry == 0) {
+        pde_page_index = alloc_ptbl(proc_index, vaddr);
+        if (pde_page_index == 0) {
+            return MagicNumber;
+        }
+    }
+
+    set_ptbl_entry_by_va(proc_index, vaddr, page_index, perm);
+    return pde_page_index;
 }
 
 /**
@@ -42,5 +57,9 @@ unsigned int map_page(unsigned int proc_index, unsigned int vaddr,
 unsigned int unmap_page(unsigned int proc_index, unsigned int vaddr)
 {
     // TODO
-    return 0;
+    unsigned int pte_entry = get_ptbl_entry_by_va(proc_index, vaddr);
+    if (pte_entry != 0){
+        rmv_ptbl_entry_by_va(proc_index, vaddr);
+    }
+    return pte_entry;
 }

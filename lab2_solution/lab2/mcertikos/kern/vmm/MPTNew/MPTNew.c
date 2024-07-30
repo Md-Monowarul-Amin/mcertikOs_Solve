@@ -17,7 +17,12 @@ unsigned int alloc_page(unsigned int proc_index, unsigned int vaddr,
                         unsigned int perm)
 {
     // TODO
-    return 0;
+    unsigned int  physical_page_index = container_alloc(proc_index);
+
+    unsigned int page_map = map_page(proc_index, vaddr, physical_page_index, perm);
+    set_ptbl_entry_by_va(proc_index, vaddr, physical_page_index, perm );
+
+    return physical_page_index;
 }
 
 /**

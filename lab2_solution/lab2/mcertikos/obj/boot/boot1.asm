@@ -3204,52 +3204,50 @@ Disassembly of section .debug_info:
   14:	00 a6 1a 00 00 00    	add    %ah,0x1a(%esi)
   1a:	00 13                	add    %dl,(%ebx)
   1c:	00 00                	add    %al,(%eax)
-  1e:	00 36                	add    %dh,(%esi)
-  20:	00 00                	add    %al,(%eax)
-  22:	00 01                	add    %al,(%ecx)
-  24:	80 4c 07 00 00       	orb    $0x0,0x0(%edi,%eax,1)
+  1e:	00 4a 00             	add    %cl,0x0(%edx)
+  21:	00 00                	add    %al,(%eax)
+  23:	01 80 4c 07 00 00    	add    %eax,0x74c(%eax)
   29:	05 00 01 04 14       	add    $0x14040100,%eax
   2e:	00 00                	add    %al,(%eax)
   30:	00 19                	add    %bl,(%ecx)
-  32:	ac                   	lods   %ds:(%esi),%al
-  33:	00 00                	add    %al,(%eax)
-  35:	00 1d 36 00 00 00    	add    %bl,0x36
+  32:	c0 00 00             	rolb   $0x0,(%eax)
+  35:	00 1d 4a 00 00 00    	add    %bl,0x4a
   3b:	00 00                	add    %al,(%eax)
   3d:	00 00                	add    %al,(%eax)
   3f:	26 8b 00             	mov    %es:(%eax),%eax
   42:	00 b3 02 00 00 87    	add    %dh,-0x78fffffe(%ebx)
   48:	00 00                	add    %al,(%eax)
-  4a:	00 05 01 06 51 01    	add    %al,0x1510601
+  4a:	00 05 01 06 65 01    	add    %al,0x1650601
   50:	00 00                	add    %al,(%eax)
-  52:	0d 8c 00 00 00       	or     $0x8c,%eax
+  52:	0d a0 00 00 00       	or     $0xa0,%eax
   57:	0d 37 00 00 00       	or     $0x37,%eax
-  5c:	05 01 08 4f 01       	add    $0x14f0801,%eax
+  5c:	05 01 08 63 01       	add    $0x1630801,%eax
   61:	00 00                	add    %al,(%eax)
-  63:	05 02 05 5a 00       	add    $0x5a0502,%eax
+  63:	05 02 05 6e 00       	add    $0x6e0502,%eax
   68:	00 00                	add    %al,(%eax)
-  6a:	05 02 07 91 01       	add    $0x1910702,%eax
+  6a:	05 02 07 a5 01       	add    $0x1a50702,%eax
   6f:	00 00                	add    %al,(%eax)
-  71:	0d 7f 01 00 00       	or     $0x17f,%eax
+  71:	0d 93 01 00 00       	or     $0x193,%eax
   76:	10 56 00             	adc    %dl,0x0(%esi)
   79:	00 00                	add    %al,(%eax)
   7b:	1a 04 05 69 6e 74 00 	sbb    0x746e69(,%eax,1),%al
-  82:	0d 7e 01 00 00       	or     $0x17e,%eax
+  82:	0d 92 01 00 00       	or     $0x192,%eax
   87:	11 67 00             	adc    %esp,0x0(%edi)
   8a:	00 00                	add    %al,(%eax)
-  8c:	05 04 07 71 01       	add    $0x1710704,%eax
+  8c:	05 04 07 85 01       	add    $0x1850704,%eax
   91:	00 00                	add    %al,(%eax)
-  93:	05 08 05 9e 00       	add    $0x9e0508,%eax
+  93:	05 08 05 b2 00       	add    $0xb20508,%eax
   98:	00 00                	add    %al,(%eax)
-  9a:	05 08 07 67 01       	add    $0x1670708,%eax
+  9a:	05 08 07 7b 01       	add    $0x17b0708,%eax
   9f:	00 00                	add    %al,(%eax)
-  a1:	12 d6                	adc    %dh,%dl
+  a1:	12 ea                	adc    %dl,%ch
   a3:	01 00                	add    %eax,(%eax)
   a5:	00 06                	add    %al,(%esi)
   a7:	10 8d 00 00 00 05    	adc    %cl,0x5000000(%ebp)
   ad:	03 80 93 00 00 0e    	add    0xe000093(%eax),%eax
   b3:	99                   	cltd   
   b4:	00 00                	add    %al,(%eax)
-  b6:	00 05 01 06 58 01    	add    %al,0x1580601
+  b6:	00 05 01 06 6c 01    	add    %al,0x16c0601
   bc:	00 00                	add    %al,(%eax)
   be:	1b 92 00 00 00 1c    	sbb    0x1c000000(%edx),%edx
   c4:	92                   	xchg   %eax,%edx
@@ -3261,10 +3259,9 @@ Disassembly of section .debug_info:
   d0:	00 00                	add    %al,(%eax)
   d2:	00 05 03 28 94 00    	add    %al,0x942803
   d8:	00 12                	add    %dl,(%edx)
-  da:	cb                   	lret   
-  db:	01 00                	add    %eax,(%eax)
-  dd:	00 1a                	add    %bl,(%edx)
-  df:	07                   	pop    %es
+  da:	df 01                	filds  (%ecx)
+  dc:	00 00                	add    %al,(%eax)
+  de:	1a 07                	sbb    (%edi),%al
   e0:	c5 00                	lds    (%eax),%eax
   e2:	00 00                	add    %al,(%eax)
   e4:	05 03 84 93 00       	add    $0x938403,%eax
@@ -3279,12 +3276,13 @@ Disassembly of section .debug_info:
   f7:	00 11                	add    %dl,(%ecx)
   f9:	67 00 00             	add    %al,(%bx,%si)
   fc:	00 27                	add    %ah,(%edi)
-  fe:	00 1d c2 01 00 00    	add    %bl,0x1c2
+  fe:	00 1d d6 01 00 00    	add    %bl,0x1d6
  104:	01 30                	add    %esi,(%eax)
  106:	0d ca 00 00 00       	or     $0xca,%eax
  10b:	05 03 00 94 00       	add    $0x940003,%eax
  110:	00 02                	add    %al,(%edx)
- 112:	3e 01 00             	add    %eax,%ds:(%eax)
+ 112:	52                   	push   %edx
+ 113:	01 00                	add    %eax,(%eax)
  115:	00 8d 92 8d 00 00    	add    %cl,0x8d92(%ebp)
  11b:	47                   	inc    %edi
  11c:	00 00                	add    %al,(%eax)
@@ -3297,15 +3295,13 @@ Disassembly of section .debug_info:
  130:	00 00                	add    %al,(%eax)
  132:	00 0c 00             	add    %cl,(%eax,%eax,1)
  135:	00 00                	add    %al,(%eax)
- 137:	09 7e 04             	or     %edi,0x4(%esi)
- 13a:	00 00                	add    %al,(%eax)
- 13c:	8d 28                	lea    (%eax),%ebp
- 13e:	5d                   	pop    %ebp
- 13f:	00 00                	add    %al,(%eax)
- 141:	00 80 00 00 00 7c    	add    %al,0x7c000000(%eax)
- 147:	00 00                	add    %al,(%eax)
+ 137:	09 92 04 00 00 8d    	or     %edx,-0x72fffffc(%edx)
+ 13d:	28 5d 00             	sub    %bl,0x0(%ebp)
+ 140:	00 00                	add    %al,(%eax)
+ 142:	80 00 00             	addb   $0x0,(%eax)
+ 145:	00 7c 00 00          	add    %bh,0x0(%eax,%eax,1)
  149:	00 09                	add    %cl,(%ecx)
- 14b:	41                   	inc    %ecx
+ 14b:	55                   	push   %ebp
  14c:	02 00                	add    (%eax),%al
  14e:	00 8d 38 5d 00 00    	add    %cl,0x5d38(%ebp)
  154:	00 9b 00 00 00 91    	add    %bl,-0x6f000000(%ebx)
@@ -3320,7 +3316,7 @@ Disassembly of section .debug_info:
  16b:	00 c3                	add    %al,%bl
  16d:	00 00                	add    %al,(%eax)
  16f:	00 13                	add    %dl,(%ebx)
- 171:	42                   	inc    %edx
+ 171:	56                   	push   %esi
  172:	00 00                	add    %al,(%eax)
  174:	00 8f 0e 5d 00 00    	add    %cl,0x5d0e(%edi)
  17a:	00 de                	add    %bl,%dh
@@ -3332,7 +3328,9 @@ Disassembly of section .debug_info:
  187:	00 68 01             	add    %ch,0x1(%eax)
  18a:	00 00                	add    %al,(%eax)
  18c:	00 02                	add    %al,(%edx)
- 18e:	81 00 00 00 78 23    	addl   $0x23780000,(%eax)
+ 18e:	95                   	xchg   %eax,%ebp
+ 18f:	00 00                	add    %al,(%eax)
+ 191:	00 78 23             	add    %bh,0x23(%eax)
  194:	8d 00                	lea    (%eax),%eax
  196:	00 6f 00             	add    %ch,0x0(%edi)
  199:	00 00                	add    %al,(%eax)
@@ -3343,7 +3341,7 @@ Disassembly of section .debug_info:
  1ab:	00 02                	add    %al,(%edx)
  1ad:	91                   	xchg   %eax,%ecx
  1ae:	00 0a                	add    %cl,(%edx)
- 1b0:	41                   	inc    %ecx
+ 1b0:	55                   	push   %ebp
  1b1:	02 00                	add    (%eax),%al
  1b3:	00 78 25             	add    %bh,0x25(%eax)
  1b6:	5d                   	pop    %ebp
@@ -3584,23 +3582,21 @@ Disassembly of section .debug_info:
  3a1:	e9 01 00 00 00       	jmp    3a7 <PR_BOOTABLE+0x327>
  3a6:	00 1f                	add    %bl,(%edi)
  3a8:	04 20                	add    $0x20,%al
- 3aa:	49                   	dec    %ecx
+ 3aa:	5d                   	pop    %ebp
  3ab:	00 00                	add    %al,(%eax)
  3ad:	00 01                	add    %al,(%ecx)
  3af:	71 0d                	jno    3be <PR_BOOTABLE+0x33e>
  3b1:	01 02                	add    %eax,(%edx)
- 3b3:	5d                   	pop    %ebp
- 3b4:	01 00                	add    %eax,(%eax)
- 3b6:	00 68 cb             	add    %ch,-0x35(%eax)
- 3b9:	8c 00                	mov    %es,(%eax)
- 3bb:	00 29                	add    %ch,(%ecx)
- 3bd:	00 00                	add    %al,(%eax)
- 3bf:	00 01                	add    %al,(%ecx)
- 3c1:	9c                   	pushf  
- 3c2:	d9 03                	flds   (%ebx)
- 3c4:	00 00                	add    %al,(%eax)
- 3c6:	03 6e 00             	add    0x0(%esi),%ebp
- 3c9:	68 0f 56 00 00       	push   $0x560f
+ 3b3:	71 01                	jno    3b6 <PR_BOOTABLE+0x336>
+ 3b5:	00 00                	add    %al,(%eax)
+ 3b7:	68 cb 8c 00 00       	push   $0x8ccb
+ 3bc:	29 00                	sub    %eax,(%eax)
+ 3be:	00 00                	add    %al,(%eax)
+ 3c0:	01 9c d9 03 00 00 03 	add    %ebx,0x3000003(%ecx,%ebx,8)
+ 3c7:	6e                   	outsb  %ds:(%esi),(%dx)
+ 3c8:	00 68 0f             	add    %ch,0xf(%eax)
+ 3cb:	56                   	push   %esi
+ 3cc:	00 00                	add    %al,(%eax)
  3ce:	00 02                	add    %al,(%edx)
  3d0:	91                   	xchg   %eax,%ecx
  3d1:	00 06                	add    %al,(%esi)
@@ -3628,7 +3624,7 @@ Disassembly of section .debug_info:
  408:	67 00 00             	add    %al,(%bx,%si)
  40b:	00 10                	add    %dl,(%eax)
  40d:	00 02                	add    %al,(%edx)
- 40f:	4a                   	dec    %edx
+ 40f:	5e                   	pop    %esi
  410:	01 00                	add    %eax,(%eax)
  412:	00 62 a2             	add    %ah,-0x5e(%edx)
  415:	8c 00                	mov    %es,(%eax)
@@ -3667,7 +3663,7 @@ Disassembly of section .debug_info:
  463:	11 67 00             	adc    %esp,0x0(%edi)
  466:	00 00                	add    %al,(%eax)
  468:	0a 00                	or     (%eax),%al
- 46a:	02 87 01 00 00 52    	add    0x52000001(%edi),%al
+ 46a:	02 9b 01 00 00 52    	add    0x52000001(%ebx),%bl
  470:	4b                   	dec    %ebx
  471:	8c 00                	mov    %es,(%eax)
  473:	00 57 00             	add    %dl,0x0(%edi)
@@ -3686,12 +3682,12 @@ Disassembly of section .debug_info:
  493:	17                   	pop    %ss
  494:	c5 00                	lds    (%eax),%eax
  496:	00 00                	add    %al,(%eax)
- 498:	02 91 04 0a d1 01    	add    0x1d10a04(%ecx),%dl
+ 498:	02 91 04 0a e5 01    	add    0x1e50a04(%ecx),%dl
  49e:	00 00                	add    %al,(%eax)
  4a0:	52                   	push   %edx
  4a1:	20 56 00             	and    %dl,0x0(%esi)
  4a4:	00 00                	add    %al,(%eax)
- 4a6:	02 91 08 0a da 03    	add    0x3da0a08(%ecx),%dl
+ 4a6:	02 91 08 0a ee 03    	add    0x3ee0a08(%ecx),%dl
  4ac:	00 00                	add    %al,(%eax)
  4ae:	52                   	push   %edx
  4af:	2c c5                	sub    $0xc5,%al
@@ -3705,8 +3701,9 @@ Disassembly of section .debug_info:
  4c2:	00 00                	add    %al,(%eax)
  4c4:	34 02                	xor    $0x2,%al
  4c6:	00 00                	add    %al,(%eax)
- 4c8:	13 b5 01 00 00 54    	adc    0x54000001(%ebp),%esi
- 4ce:	0c 56                	or     $0x56,%al
+ 4c8:	13 c9                	adc    %ecx,%ecx
+ 4ca:	01 00                	add    %eax,(%eax)
+ 4cc:	00 54 0c 56          	add    %dl,0x56(%esp,%ecx,1)
  4d0:	00 00                	add    %al,(%eax)
  4d2:	00 52 02             	add    %dl,0x2(%edx)
  4d5:	00 00                	add    %al,(%eax)
@@ -3716,8 +3713,9 @@ Disassembly of section .debug_info:
  4dc:	a2 8c 00 00 c0       	mov    %al,0xc000008c
  4e1:	04 00                	add    $0x0,%al
  4e3:	00 00                	add    %al,(%eax)
- 4e5:	02 ba 01 00 00 45    	add    0x45000001(%edx),%bh
- 4eb:	16                   	push   %ss
+ 4e5:	02 ce                	add    %dh,%cl
+ 4e7:	01 00                	add    %eax,(%eax)
+ 4e9:	00 45 16             	add    %al,0x16(%ebp)
  4ec:	8c 00                	mov    %es,(%eax)
  4ee:	00 35 00 00 00 01    	add    %dh,0x1000000
  4f4:	9c                   	pushf  
@@ -3750,7 +3748,8 @@ Disassembly of section .debug_info:
  533:	00 8c 02 00 00 04 27 	add    %cl,0x27040000(%edx,%eax,1)
  53a:	8c 00                	mov    %es,(%eax)
  53c:	00 1d 05 00 00 00    	add    %bl,0x5
- 542:	18 a4 01 00 00 3b 56 	sbb    %ah,0x563b0000(%ecx,%eax,1)
+ 542:	18 b8 01 00 00 3b    	sbb    %bh,0x3b000001(%eax)
+ 548:	56                   	push   %esi
  549:	00 00                	add    %al,(%eax)
  54b:	00 03                	add    %al,(%ebx)
  54d:	8c 00                	mov    %es,(%eax)
@@ -3777,9 +3776,10 @@ Disassembly of section .debug_info:
  57e:	9e                   	sahf   
  57f:	00 00                	add    %al,(%eax)
  581:	00 02                	add    %al,(%edx)
- 583:	7c 00                	jl     585 <PR_BOOTABLE+0x505>
- 585:	00 00                	add    %al,(%eax)
- 587:	32 f4                	xor    %ah,%dh
+ 583:	90                   	nop
+ 584:	00 00                	add    %al,(%eax)
+ 586:	00 32                	add    %dh,(%edx)
+ 588:	f4                   	hlt    
  589:	8c 00                	mov    %es,(%eax)
  58b:	00 2f                	add    %ch,(%edi)
  58d:	00 00                	add    %al,(%eax)
@@ -3799,7 +3799,7 @@ Disassembly of section .debug_info:
  5b1:	23 8d 00 00 e0 05    	and    0x5e00000(%ebp),%ecx
  5b7:	00 00                	add    %al,(%eax)
  5b9:	00 02                	add    %al,(%edx)
- 5bb:	76 00                	jbe    5bd <PR_BOOTABLE+0x53d>
+ 5bb:	8a 00                	mov    (%eax),%al
  5bd:	00 00                	add    %al,(%eax)
  5bf:	28 e9                	sub    %ch,%cl
  5c1:	8b 00                	mov    (%eax),%eax
@@ -3818,7 +3818,7 @@ Disassembly of section .debug_info:
  5e0:	06                   	push   %es
  5e1:	00 00                	add    %al,(%eax)
  5e3:	00 02                	add    %al,(%edx)
- 5e5:	6a 00                	push   $0x0
+ 5e5:	7e 00                	jle    5e7 <PR_BOOTABLE+0x567>
  5e7:	00 00                	add    %al,(%eax)
  5e9:	23 d1                	and    %ecx,%edx
  5eb:	8b 00                	mov    (%eax),%eax
@@ -3835,7 +3835,7 @@ Disassembly of section .debug_info:
  600:	00 02                	add    %al,(%edx)
  602:	91                   	xchg   %eax,%ecx
  603:	00 00                	add    %al,(%eax)
- 605:	02 52 00             	add    0x0(%edx),%dl
+ 605:	02 66 00             	add    0x0(%esi),%ah
  608:	00 00                	add    %al,(%eax)
  60a:	1d 86 8b 00 00       	sbb    $0x8b86,%eax
  60f:	4b                   	dec    %ebx
@@ -3859,12 +3859,10 @@ Disassembly of section .debug_info:
  634:	06                   	push   %es
  635:	00 00                	add    %al,(%eax)
  637:	00 18                	add    %bl,(%eax)
- 639:	8c 01                	mov    %es,(%ecx)
- 63b:	00 00                	add    %al,(%eax)
- 63d:	0f 56 00             	orps   (%eax),%xmm0
- 640:	00 00                	add    %al,(%eax)
- 642:	4c                   	dec    %esp
- 643:	8b 00                	mov    (%eax),%eax
+ 639:	a0 01 00 00 0f       	mov    0xf000001,%al
+ 63e:	56                   	push   %esi
+ 63f:	00 00                	add    %al,(%eax)
+ 641:	00 4c 8b 00          	add    %cl,0x0(%ebx,%ecx,4)
  645:	00 3a                	add    %bh,(%edx)
  647:	00 00                	add    %al,(%eax)
  649:	00 01                	add    %al,(%ecx)
@@ -3885,23 +3883,22 @@ Disassembly of section .debug_info:
  668:	00 ef                	add    %ch,%bh
  66a:	02 00                	add    (%eax),%al
  66c:	00 09                	add    %cl,(%ecx)
- 66e:	64 00 00             	add    %al,%fs:(%eax)
- 671:	00 0f                	add    %cl,(%edi)
- 673:	1c 56                	sbb    $0x56,%al
- 675:	00 00                	add    %al,(%eax)
- 677:	00 04 03             	add    %al,(%ebx,%eax,1)
+ 66e:	78 00                	js     670 <PR_BOOTABLE+0x5f0>
+ 670:	00 00                	add    %al,(%eax)
+ 672:	0f 1c 56 00          	nopl   0x0(%esi)
+ 676:	00 00                	add    %al,(%eax)
+ 678:	04 03                	add    $0x3,%al
  67a:	00 00                	add    %al,(%eax)
  67c:	00 03                	add    %al,(%ebx)
  67e:	00 00                	add    %al,(%eax)
- 680:	09 6f 00             	or     %ebp,0x0(%edi)
- 683:	00 00                	add    %al,(%eax)
- 685:	0f 2f 58 05          	comiss 0x5(%eax),%xmm3
- 689:	00 00                	add    %al,(%eax)
- 68b:	1f                   	pop    %ds
- 68c:	03 00                	add    (%eax),%eax
- 68e:	00 11                	add    %dl,(%ecx)
- 690:	03 00                	add    (%eax),%eax
- 692:	00 07                	add    %al,(%edi)
+ 680:	09 83 00 00 00 0f    	or     %eax,0xf000000(%ebx)
+ 686:	2f                   	das    
+ 687:	58                   	pop    %eax
+ 688:	05 00 00 1f 03       	add    $0x31f0000,%eax
+ 68d:	00 00                	add    %al,(%eax)
+ 68f:	11 03                	adc    %eax,(%ebx)
+ 691:	00 00                	add    %al,(%eax)
+ 693:	07                   	pop    %es
  694:	6c                   	insb   (%dx),%es:(%edi)
  695:	00 11                	add    %dl,(%ecx)
  697:	09 56 00             	or     %edx,0x0(%esi)
@@ -3911,7 +3908,7 @@ Disassembly of section .debug_info:
  69f:	00 8c 03 00 00 04 78 	add    %cl,0x78040000(%ebx,%eax,1)
  6a6:	8b 00                	mov    (%eax),%eax
  6a8:	00 89 06 00 00 00    	add    %cl,0x6(%ecx)
- 6ae:	02 62 01             	add    0x1(%edx),%ah
+ 6ae:	02 76 01             	add    0x1(%esi),%dh
  6b1:	00 00                	add    %al,(%eax)
  6b3:	08 26                	or     %ah,(%esi)
  6b5:	8b 00                	mov    (%eax),%eax
@@ -3925,7 +3922,7 @@ Disassembly of section .debug_info:
  6c2:	03 6c 00 08          	add    0x8(%eax,%eax,1),%ebp
  6c6:	0f 56 00             	orps   (%eax),%xmm0
  6c9:	00 00                	add    %al,(%eax)
- 6cb:	02 91 00 0a 64 00    	add    0x640a00(%ecx),%dl
+ 6cb:	02 91 00 0a 78 00    	add    0x780a00(%ecx),%dl
  6d1:	00 00                	add    %al,(%eax)
  6d3:	08 16                	or     %dl,(%esi)
  6d5:	56                   	push   %esi
@@ -3944,15 +3941,17 @@ Disassembly of section .debug_info:
  6ec:	0a 14 8d 00 00 00 ab 	or     -0x55000000(,%ecx,4),%dl
  6f3:	03 00                	add    (%eax),%eax
  6f5:	00 a9 03 00 00 00    	add    %ch,0x3(%ecx)
- 6fb:	21 99 00 00 00 02    	and    %ebx,0x2000000(%ecx)
+ 6fb:	21 ad 00 00 00 02    	and    %ebp,0x2000000(%ebp)
  701:	29 14 03             	sub    %edx,(%ebx,%eax,1)
  704:	06                   	push   %es
  705:	07                   	pop    %es
  706:	00 00                	add    %al,(%eax)
- 708:	08 b0 01 00 00 29    	or     %dh,0x29000001(%eax)
+ 708:	08 c4                	or     %al,%ah
+ 70a:	01 00                	add    %eax,(%eax)
+ 70c:	00 29                	add    %ch,(%ecx)
  70e:	1d 56 00 00 00       	sbb    $0x56,%eax
- 713:	08 f6                	or     %dh,%dh
- 715:	03 00                	add    (%eax),%eax
+ 713:	08 0a                	or     %cl,(%edx)
+ 715:	04 00                	add    $0x0,%al
  717:	00 29                	add    %ch,(%ecx)
  719:	29 82 03 00 00 22    	sub    %eax,0x22000003(%edx)
  71f:	63 6e 74             	arpl   %bp,0x74(%esi)
@@ -3969,29 +3968,32 @@ Disassembly of section .debug_info:
  738:	2f                   	das    
  739:	07                   	pop    %es
  73a:	00 00                	add    %al,(%eax)
- 73c:	08 b0 01 00 00 22    	or     %dh,0x22000001(%eax)
+ 73c:	08 c4                	or     %al,%ah
+ 73e:	01 00                	add    %eax,(%eax)
+ 740:	00 22                	add    %ah,(%edx)
  742:	1f                   	pop    %ds
  743:	56                   	push   %esi
  744:	00 00                	add    %al,(%eax)
- 746:	00 24 ab             	add    %ah,(%ebx,%ebp,4)
+ 746:	00 24 bf             	add    %ah,(%edi,%edi,4)
  749:	01 00                	add    %eax,(%eax)
  74b:	00 02                	add    %al,(%edx)
  74d:	24 0d                	and    $0xd,%al
  74f:	2d 00 00 00 00       	sub    $0x0,%eax
- 754:	25 94 00 00 00       	and    $0x94,%eax
+ 754:	25 a8 00 00 00       	and    $0xa8,%eax
  759:	02 18                	add    (%eax),%bl
  75b:	14 03                	adc    $0x3,%al
- 75d:	08 b0 01 00 00 18    	or     %dh,0x18000001(%eax)
+ 75d:	08 c4                	or     %al,%ah
+ 75f:	01 00                	add    %eax,(%eax)
+ 761:	00 18                	add    %bl,(%eax)
  763:	1d 56 00 00 00       	sbb    $0x56,%eax
- 768:	08 ab 01 00 00 18    	or     %ch,0x18000001(%ebx)
+ 768:	08 bf 01 00 00 18    	or     %bh,0x18000001(%edi)
  76e:	2b 2d 00 00 00 00    	sub    0x0,%ebp
  774:	00 44 07 00          	add    %al,0x0(%edi,%eax,1)
  778:	00 05 00 01 04 75    	add    %al,0x75040100
  77e:	02 00                	add    (%eax),%al
  780:	00 12                	add    %dl,(%edx)
- 782:	ac                   	lods   %ds:(%esi),%al
- 783:	00 00                	add    %al,(%eax)
- 785:	00 1d 57 00 00 00    	add    %bl,0x57
+ 782:	c0 00 00             	rolb   $0x0,(%eax)
+ 785:	00 1d 6b 00 00 00    	add    %bl,0x6b
  78b:	00 00                	add    %al,(%eax)
  78d:	00 00                	add    %al,(%eax)
  78f:	e1 8d                	loope  71e <PR_BOOTABLE+0x69e>
@@ -4000,50 +4002,49 @@ Disassembly of section .debug_info:
  795:	00 00                	add    %al,(%eax)
  797:	aa                   	stos   %al,%es:(%edi)
  798:	04 00                	add    $0x0,%al
- 79a:	00 05 01 06 51 01    	add    %al,0x1510601
+ 79a:	00 05 01 06 65 01    	add    %al,0x1650601
  7a0:	00 00                	add    %al,(%eax)
- 7a2:	03 8c 00 00 00 0d 1c 	add    0x1c0d0000(%eax,%eax,1),%ecx
- 7a9:	38 00                	cmp    %al,(%eax)
- 7ab:	00 00                	add    %al,(%eax)
- 7ad:	05 01 08 4f 01       	add    $0x14f0801,%eax
+ 7a2:	03 a0 00 00 00 0d    	add    0xd000000(%eax),%esp
+ 7a8:	1c 38                	sbb    $0x38,%al
+ 7aa:	00 00                	add    %al,(%eax)
+ 7ac:	00 05 01 08 63 01    	add    %al,0x1630801
  7b2:	00 00                	add    %al,(%eax)
- 7b4:	05 02 05 5a 00       	add    $0x5a0502,%eax
+ 7b4:	05 02 05 6e 00       	add    $0x6e0502,%eax
  7b9:	00 00                	add    %al,(%eax)
- 7bb:	03 68 03             	add    0x3(%eax),%ebp
- 7be:	00 00                	add    %al,(%eax)
- 7c0:	0f 1c 51 00          	nopl   0x0(%ecx)
- 7c4:	00 00                	add    %al,(%eax)
- 7c6:	05 02 07 91 01       	add    $0x1910702,%eax
+ 7bb:	03 7c 03 00          	add    0x0(%ebx,%eax,1),%edi
+ 7bf:	00 0f                	add    %cl,(%edi)
+ 7c1:	1c 51                	sbb    $0x51,%al
+ 7c3:	00 00                	add    %al,(%eax)
+ 7c5:	00 05 02 07 a5 01    	add    %al,0x1a50702
  7cb:	00 00                	add    %al,(%eax)
- 7cd:	03 7f 01             	add    0x1(%edi),%edi
- 7d0:	00 00                	add    %al,(%eax)
- 7d2:	10 1c 63             	adc    %bl,(%ebx,%eiz,2)
+ 7cd:	03 93 01 00 00 10    	add    0x10000001(%ebx),%edx
+ 7d3:	1c 63                	sbb    $0x63,%al
  7d5:	00 00                	add    %al,(%eax)
  7d7:	00 13                	add    %dl,(%ebx)
  7d9:	04 05                	add    $0x5,%al
- 7db:	69 6e 74 00 03 7e 01 	imul   $0x17e0300,0x74(%esi),%ebp
+ 7db:	69 6e 74 00 03 92 01 	imul   $0x1920300,0x74(%esi),%ebp
  7e2:	00 00                	add    %al,(%eax)
  7e4:	11 1c 75 00 00 00 05 	adc    %ebx,0x5000000(,%esi,2)
  7eb:	04 07                	add    $0x7,%al
- 7ed:	71 01                	jno    7f0 <PR_BOOTABLE+0x770>
+ 7ed:	85 01                	test   %eax,(%ecx)
  7ef:	00 00                	add    %al,(%eax)
- 7f1:	05 08 05 9e 00       	add    $0x9e0508,%eax
+ 7f1:	05 08 05 b2 00       	add    $0xb20508,%eax
  7f6:	00 00                	add    %al,(%eax)
- 7f8:	03 22                	add    (%edx),%esp
+ 7f8:	03 36                	add    (%esi),%esi
  7fa:	02 00                	add    (%eax),%al
  7fc:	00 13                	add    %dl,(%ebx)
  7fe:	1c 8e                	sbb    $0x8e,%al
  800:	00 00                	add    %al,(%eax)
- 802:	00 05 08 07 67 01    	add    %al,0x1670708
+ 802:	00 05 08 07 7b 01    	add    %al,0x17b0708
  808:	00 00                	add    %al,(%eax)
  80a:	0a 10                	or     (%eax),%dl
  80c:	5e                   	pop    %esi
  80d:	05 e5 00 00 00       	add    $0xe5,%eax
- 812:	01 5a 03             	add    %ebx,0x3(%edx)
+ 812:	01 6e 03             	add    %ebp,0x3(%esi)
  815:	00 00                	add    %al,(%eax)
  817:	5f                   	pop    %edi
  818:	11 2d 00 00 00 00    	adc    %ebp,0x0
- 81e:	01 3c 03             	add    %edi,(%ebx,%eax,1)
+ 81e:	01 50 03             	add    %edx,0x3(%eax)
  821:	00 00                	add    %al,(%eax)
  823:	62 11                	bound  %edx,(%ecx)
  825:	e5 00                	in     $0x0,%eax
@@ -4052,18 +4053,19 @@ Disassembly of section .debug_info:
  82b:	69 64 00 63 11 2d 00 	imul   $0x2d11,0x63(%eax,%eax,1),%esp
  832:	00 
  833:	00 04 01             	add    %al,(%ecx,%eax,1)
- 836:	e8 03 00 00 67       	call   6700083e <SMAP_SIG+0x13b2c6ee>
- 83b:	11 e5                	adc    %esp,%ebp
- 83d:	00 00                	add    %al,(%eax)
- 83f:	00 05 01 2c 04 00    	add    %al,0x42c01
+ 836:	fc                   	cld    
+ 837:	03 00                	add    (%eax),%eax
+ 839:	00 67 11             	add    %ah,0x11(%edi)
+ 83c:	e5 00                	in     $0x0,%eax
+ 83e:	00 00                	add    %al,(%eax)
+ 840:	05 01 40 04 00       	add    $0x44001,%eax
  845:	00 68 12             	add    %ch,0x12(%eax)
  848:	6a 00                	push   $0x0
  84a:	00 00                	add    %al,(%eax)
  84c:	08 01                	or     %al,(%ecx)
- 84e:	d1 04 00             	roll   (%eax,%eax,1)
- 851:	00 69 12             	add    %ch,0x12(%ecx)
- 854:	6a 00                	push   $0x0
- 856:	00 00                	add    %al,(%eax)
+ 84e:	e5 04                	in     $0x4,%eax
+ 850:	00 00                	add    %al,(%eax)
+ 852:	69 12 6a 00 00 00    	imul   $0x6a,(%edx),%edx
  858:	0c 00                	or     $0x0,%al
  85a:	06                   	push   %es
  85b:	2d 00 00 00 f5       	sub    $0xf5000000,%eax
@@ -4079,20 +4081,20 @@ Disassembly of section .debug_info:
  874:	37                   	aaa    
  875:	01 00                	add    %eax,(%eax)
  877:	00 01                	add    %al,(%ecx)
- 879:	48                   	dec    %eax
+ 879:	5c                   	pop    %esp
  87a:	02 00                	add    (%eax),%al
  87c:	00 5c 0d 37          	add    %bl,0x37(%ebp,%ecx,1)
  880:	01 00                	add    %eax,(%eax)
  882:	00 00                	add    %al,(%eax)
- 884:	0d dc 01 00 00       	or     $0x1dc,%eax
+ 884:	0d f0 01 00 00       	or     $0x1f0,%eax
  889:	5d                   	pop    %ebp
  88a:	0d 48 01 00 00       	or     $0x148,%eax
  88f:	b4 01                	mov    $0x1,%ah
- 891:	0d e5 02 00 00       	or     $0x2e5,%eax
+ 891:	0d f9 02 00 00       	or     $0x2f9,%eax
  896:	6a 12                	push   $0x12
  898:	58                   	pop    %eax
  899:	01 00                	add    %eax,(%eax)
- 89b:	00 be 01 0d 55 04    	add    %bh,0x4550d01(%esi)
+ 89b:	00 be 01 0d 69 04    	add    %bh,0x4690d01(%esi)
  8a1:	00 00                	add    %al,(%eax)
  8a3:	6b 0d 68 01 00 00 fe 	imul   $0xfffffffe,0x168,%ecx
  8aa:	01 00                	add    %eax,(%eax)
@@ -4123,126 +4125,116 @@ Disassembly of section .debug_info:
  8e7:	75 00                	jne    8e9 <PR_BOOTABLE+0x869>
  8e9:	00 00                	add    %al,(%eax)
  8eb:	01 00                	add    %eax,(%eax)
- 8ed:	03 c3                	add    %ebx,%eax
+ 8ed:	03 d7                	add    %edi,%edx
  8ef:	02 00                	add    (%eax),%al
  8f1:	00 6c 0e f5          	add    %ch,-0xb(%esi,%ecx,1)
  8f5:	00 00                	add    %al,(%eax)
  8f7:	00 0b                	add    %cl,(%ebx)
- 8f9:	46                   	inc    %esi
+ 8f9:	5a                   	pop    %edx
  8fa:	03 00                	add    (%eax),%eax
  8fc:	00 18                	add    %bl,(%eax)
  8fe:	76 bf                	jbe    8bf <PR_BOOTABLE+0x83f>
  900:	01 00                	add    %eax,(%eax)
  902:	00 01                	add    %al,(%ecx)
- 904:	27                   	daa    
- 905:	04 00                	add    $0x0,%al
+ 904:	3b 04 00             	cmp    (%eax,%eax,1),%eax
  907:	00 77 0e             	add    %dh,0xe(%edi)
  90a:	6a 00                	push   $0x0
  90c:	00 00                	add    %al,(%eax)
  90e:	00 01                	add    %al,(%ecx)
- 910:	f1                   	int1   
- 911:	03 00                	add    (%eax),%eax
- 913:	00 78 0e             	add    %bh,0xe(%eax)
+ 910:	05 04 00 00 78       	add    $0x78000004,%eax
+ 915:	0e                   	push   %cs
  916:	83 00 00             	addl   $0x0,(%eax)
  919:	00 04 01             	add    %al,(%ecx,%eax,1)
- 91c:	76 03                	jbe    921 <PR_BOOTABLE+0x8a1>
+ 91c:	8a 03                	mov    (%ebx),%al
  91e:	00 00                	add    %al,(%eax)
  920:	79 0e                	jns    930 <PR_BOOTABLE+0x8b0>
  922:	83 00 00             	addl   $0x0,(%eax)
  925:	00 0c 01             	add    %cl,(%ecx,%eax,1)
- 928:	cb                   	lret   
- 929:	02 00                	add    (%eax),%al
- 92b:	00 7a 0e             	add    %bh,0xe(%edx)
+ 928:	df 02                	filds  (%edx)
+ 92a:	00 00                	add    %al,(%eax)
+ 92c:	7a 0e                	jp     93c <PR_BOOTABLE+0x8bc>
  92e:	6a 00                	push   $0x0
  930:	00 00                	add    %al,(%eax)
  932:	14 00                	adc    $0x0,%al
- 934:	03 ef                	add    %edi,%ebp
- 936:	02 00                	add    (%eax),%al
+ 934:	03 03                	add    (%ebx),%eax
+ 936:	03 00                	add    (%eax),%eax
  938:	00 7b 0e             	add    %bh,0xe(%ebx)
  93b:	83 01 00             	addl   $0x0,(%ecx)
  93e:	00 0b                	add    %cl,(%ebx)
- 940:	e5 01                	in     $0x1,%eax
- 942:	00 00                	add    %al,(%eax)
- 944:	34 83                	xor    $0x83,%al
+ 940:	f9                   	stc    
+ 941:	01 00                	add    %eax,(%eax)
+ 943:	00 34 83             	add    %dh,(%ebx,%eax,4)
  946:	8a 02                	mov    (%edx),%al
  948:	00 00                	add    %al,(%eax)
- 94a:	01 e0                	add    %esp,%eax
+ 94a:	01 f4                	add    %esi,%esp
  94c:	03 00                	add    (%eax),%eax
  94e:	00 84 0e 6a 00 00 00 	add    %al,0x6a(%esi,%ecx,1)
  955:	00 01                	add    %al,(%ecx)
- 957:	b1 03                	mov    $0x3,%cl
+ 957:	c5 03                	lds    (%ebx),%eax
  959:	00 00                	add    %al,(%eax)
  95b:	85 0d 8a 02 00 00    	test   %ecx,0x28a
  961:	04 01                	add    $0x1,%al
- 963:	c9                   	leave  
- 964:	02 00                	add    (%eax),%al
- 966:	00 86 0e 46 00 00    	add    %al,0x460e(%esi)
+ 963:	dd 02                	fldl   (%edx)
+ 965:	00 00                	add    %al,(%eax)
+ 967:	86 0e                	xchg   %cl,(%esi)
+ 969:	46                   	inc    %esi
+ 96a:	00 00                	add    %al,(%eax)
  96c:	00 10                	add    %dl,(%eax)
- 96e:	01 63 02             	add    %esp,0x2(%ebx)
+ 96e:	01 77 02             	add    %esi,0x2(%edi)
  971:	00 00                	add    %al,(%eax)
  973:	87 0e                	xchg   %ecx,(%esi)
  975:	46                   	inc    %esi
  976:	00 00                	add    %al,(%eax)
  978:	00 12                	add    %dl,(%edx)
- 97a:	01 1f                	add    %ebx,(%edi)
+ 97a:	01 33                	add    %esi,(%ebx)
  97c:	03 00                	add    (%eax),%eax
  97e:	00 88 0e 6a 00 00    	add    %cl,0x6a0e(%eax)
  984:	00 14 01             	add    %dl,(%ecx,%eax,1)
- 987:	1a 02                	sbb    (%edx),%al
- 989:	00 00                	add    %al,(%eax)
- 98b:	89 0e                	mov    %ecx,(%esi)
- 98d:	6a 00                	push   $0x0
- 98f:	00 00                	add    %al,(%eax)
- 991:	18 01                	sbb    %al,(%ecx)
- 993:	cb                   	lret   
+ 987:	2e 02 00             	add    %cs:(%eax),%al
+ 98a:	00 89 0e 6a 00 00    	add    %cl,0x6a0e(%ecx)
+ 990:	00 18                	add    %bl,(%eax)
+ 992:	01 df                	add    %ebx,%edi
  994:	03 00                	add    (%eax),%eax
  996:	00 8a 0e 6a 00 00    	add    %cl,0x6a0e(%edx)
  99c:	00 1c 01             	add    %bl,(%ecx,%eax,1)
- 99f:	04 04                	add    $0x4,%al
- 9a1:	00 00                	add    %al,(%eax)
- 9a3:	8b 0e                	mov    (%esi),%ecx
- 9a5:	6a 00                	push   $0x0
- 9a7:	00 00                	add    %al,(%eax)
- 9a9:	20 01                	and    %al,(%ecx)
- 9ab:	53                   	push   %ebx
- 9ac:	02 00                	add    (%eax),%al
- 9ae:	00 8c 0e 6a 00 00 00 	add    %cl,0x6a(%esi,%ecx,1)
+ 99f:	18 04 00             	sbb    %al,(%eax,%eax,1)
+ 9a2:	00 8b 0e 6a 00 00    	add    %cl,0x6a0e(%ebx)
+ 9a8:	00 20                	add    %ah,(%eax)
+ 9aa:	01 67 02             	add    %esp,0x2(%edi)
+ 9ad:	00 00                	add    %al,(%eax)
+ 9af:	8c 0e                	mov    %cs,(%esi)
+ 9b1:	6a 00                	push   $0x0
+ 9b3:	00 00                	add    %al,(%eax)
  9b5:	24 01                	and    $0x1,%al
- 9b7:	dc 02                	faddl  (%edx)
- 9b9:	00 00                	add    %al,(%eax)
- 9bb:	8d 0e                	lea    (%esi),%ecx
- 9bd:	46                   	inc    %esi
- 9be:	00 00                	add    %al,(%eax)
+ 9b7:	f0 02 00             	lock add (%eax),%al
+ 9ba:	00 8d 0e 46 00 00    	add    %cl,0x460e(%ebp)
  9c0:	00 28                	add    %ch,(%eax)
- 9c2:	01 6d 02             	add    %ebp,0x2(%ebp)
- 9c5:	00 00                	add    %al,(%eax)
- 9c7:	8e 0e                	mov    (%esi),%cs
+ 9c2:	01 81 02 00 00 8e    	add    %eax,-0x71fffffe(%ecx)
+ 9c8:	0e                   	push   %cs
  9c9:	46                   	inc    %esi
  9ca:	00 00                	add    %al,(%eax)
  9cc:	00 2a                	add    %ch,(%edx)
- 9ce:	01 4d 04             	add    %ecx,0x4(%ebp)
+ 9ce:	01 61 04             	add    %esp,0x4(%ecx)
  9d1:	00 00                	add    %al,(%eax)
  9d3:	8f                   	(bad)  
  9d4:	0e                   	push   %cs
  9d5:	46                   	inc    %esi
  9d6:	00 00                	add    %al,(%eax)
  9d8:	00 2c 01             	add    %ch,(%ecx,%eax,1)
- 9db:	b1 02                	mov    $0x2,%cl
+ 9db:	c5 02                	lds    (%edx),%eax
  9dd:	00 00                	add    %al,(%eax)
  9df:	90                   	nop
  9e0:	0e                   	push   %cs
  9e1:	46                   	inc    %esi
  9e2:	00 00                	add    %al,(%eax)
  9e4:	00 2e                	add    %ch,(%esi)
- 9e6:	01 71 04             	add    %esi,0x4(%ecx)
- 9e9:	00 00                	add    %al,(%eax)
- 9eb:	91                   	xchg   %eax,%ecx
+ 9e6:	01 85 04 00 00 91    	add    %eax,-0x6efffffc(%ebp)
  9ec:	0e                   	push   %cs
  9ed:	46                   	inc    %esi
  9ee:	00 00                	add    %al,(%eax)
  9f0:	00 30                	add    %dh,(%eax)
- 9f2:	01 ec                	add    %ebp,%esp
- 9f4:	01 00                	add    %eax,(%eax)
+ 9f2:	01 00                	add    %eax,(%eax)
+ 9f4:	02 00                	add    (%eax),%al
  9f6:	00 92 0e 46 00 00    	add    %dl,0x460e(%edx)
  9fc:	00 32                	add    %dh,(%edx)
  9fe:	00 06                	add    %al,(%esi)
@@ -4252,85 +4244,88 @@ Disassembly of section .debug_info:
  a09:	75 00                	jne    a0b <PR_BOOTABLE+0x98b>
  a0b:	00 00                	add    %al,(%eax)
  a0d:	0b 00                	or     (%eax),%eax
- a0f:	03 01                	add    (%ecx),%eax
- a11:	02 00                	add    (%eax),%al
- a13:	00 93 03 ca 01 00    	add    %dl,0x1ca03(%ebx)
+ a0f:	03 15 02 00 00 93    	add    0x93000002,%edx
+ a15:	03 ca                	add    %edx,%ecx
+ a17:	01 00                	add    %eax,(%eax)
  a19:	00 0b                	add    %cl,(%ebx)
- a1b:	a9 02 00 00 20       	test   $0x20000002,%eax
+ a1b:	bd 02 00 00 20       	mov    $0x20000002,%ebp
  a20:	96                   	xchg   %eax,%esi
  a21:	11 03                	adc    %eax,(%ebx)
  a23:	00 00                	add    %al,(%eax)
- a25:	01 a2 02 00 00 97    	add    %esp,-0x68fffffe(%edx)
+ a25:	01 b6 02 00 00 97    	add    %esi,-0x68fffffe(%esi)
  a2b:	0e                   	push   %cs
  a2c:	6a 00                	push   $0x0
  a2e:	00 00                	add    %al,(%eax)
  a30:	00 01                	add    %al,(%ecx)
- a32:	3f                   	aas    
+ a32:	53                   	push   %ebx
  a33:	02 00                	add    (%eax),%al
  a35:	00 98 0e 6a 00 00    	add    %bl,0x6a0e(%eax)
  a3b:	00 04 01             	add    %al,(%ecx,%eax,1)
- a3e:	88 03                	mov    %al,(%ebx)
- a40:	00 00                	add    %al,(%eax)
- a42:	99                   	cltd   
- a43:	0e                   	push   %cs
- a44:	6a 00                	push   $0x0
- a46:	00 00                	add    %al,(%eax)
- a48:	08 01                	or     %al,(%ecx)
- a4a:	cc                   	int3   
+ a3e:	9c                   	pushf  
+ a3f:	03 00                	add    (%eax),%eax
+ a41:	00 99 0e 6a 00 00    	add    %bl,0x6a0e(%ecx)
+ a47:	00 08                	add    %cl,(%eax)
+ a49:	01 e0                	add    %esp,%eax
  a4b:	04 00                	add    $0x0,%al
  a4d:	00 9a 0e 6a 00 00    	add    %bl,0x6a0e(%edx)
  a53:	00 0c 01             	add    %cl,(%ecx,%eax,1)
- a56:	44                   	inc    %esp
+ a56:	58                   	pop    %eax
  a57:	04 00                	add    $0x0,%al
  a59:	00 9b 0e 6a 00 00    	add    %bl,0x6a0e(%ebx)
  a5f:	00 10                	add    %dl,(%eax)
- a61:	01 37                	add    %esi,(%edi)
- a63:	02 00                	add    (%eax),%al
- a65:	00 9c 0e 6a 00 00 00 	add    %bl,0x6a(%esi,%ecx,1)
+ a61:	01 4b 02             	add    %ecx,0x2(%ebx)
+ a64:	00 00                	add    %al,(%eax)
+ a66:	9c                   	pushf  
+ a67:	0e                   	push   %cs
+ a68:	6a 00                	push   $0x0
+ a6a:	00 00                	add    %al,(%eax)
  a6c:	14 01                	adc    $0x1,%al
- a6e:	9e                   	sahf   
- a6f:	03 00                	add    (%eax),%eax
- a71:	00 9d 0e 6a 00 00    	add    %bl,0x6a0e(%ebp)
- a77:	00 18                	add    %bl,(%eax)
- a79:	01 ba 04 00 00 9e    	add    %edi,-0x61fffffc(%edx)
- a7f:	0e                   	push   %cs
- a80:	6a 00                	push   $0x0
- a82:	00 00                	add    %al,(%eax)
- a84:	1c 00                	sbb    $0x0,%al
- a86:	03 a9 02 00 00 9f    	add    -0x60fffffe(%ecx),%ebp
+ a6e:	b2 03                	mov    $0x3,%dl
+ a70:	00 00                	add    %al,(%eax)
+ a72:	9d                   	popf   
+ a73:	0e                   	push   %cs
+ a74:	6a 00                	push   $0x0
+ a76:	00 00                	add    %al,(%eax)
+ a78:	18 01                	sbb    %al,(%ecx)
+ a7a:	ce                   	into   
+ a7b:	04 00                	add    $0x0,%al
+ a7d:	00 9e 0e 6a 00 00    	add    %bl,0x6a0e(%esi)
+ a83:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ a86:	03 bd 02 00 00 9f    	add    -0x60fffffe(%ebp),%edi
  a8c:	03 a5 02 00 00 0a    	add    0xa000002(%ebp),%esp
  a92:	04 ad                	add    $0xad,%al
  a94:	05 55 03 00 00       	add    $0x355,%eax
- a99:	01 35 03 00 00 ae    	add    %esi,0xae000003
+ a99:	01 49 03             	add    %ecx,0x3(%ecx)
+ a9c:	00 00                	add    %al,(%eax)
+ a9e:	ae                   	scas   %es:(%edi),%al
  a9f:	11 2d 00 00 00 00    	adc    %ebp,0x0
- aa5:	01 29                	add    %ebp,(%ecx)
- aa7:	03 00                	add    (%eax),%eax
- aa9:	00 af 11 2d 00 00    	add    %ch,0x2d11(%edi)
- aaf:	00 01                	add    %al,(%ecx)
- ab1:	01 2f                	add    %ebp,(%edi)
- ab3:	03 00                	add    (%eax),%eax
- ab5:	00 b0 11 2d 00 00    	add    %dh,0x2d11(%eax)
- abb:	00 02                	add    %al,(%edx)
- abd:	01 9c 02 00 00 b1 11 	add    %ebx,0x11b10000(%edx,%eax,1)
- ac4:	2d 00 00 00 03       	sub    $0x3000000,%eax
+ aa5:	01 3d 03 00 00 af    	add    %edi,0xaf000003
+ aab:	11 2d 00 00 00 01    	adc    %ebp,0x1000000
+ ab1:	01 43 03             	add    %eax,0x3(%ebx)
+ ab4:	00 00                	add    %al,(%eax)
+ ab6:	b0 11                	mov    $0x11,%al
+ ab8:	2d 00 00 00 02       	sub    $0x2000000,%eax
+ abd:	01 b0 02 00 00 b1    	add    %esi,-0x4efffffe(%eax)
+ ac3:	11 2d 00 00 00 03    	adc    %ebp,0x3000000
  ac9:	00 0a                	add    %cl,(%edx)
  acb:	10 be 09 8e 03 00    	adc    %bh,0x38e09(%esi)
  ad1:	00 01                	add    %al,(%ecx)
- ad3:	24 04                	and    $0x4,%al
- ad5:	00 00                	add    %al,(%eax)
- ad7:	bf 16 6a 00 00       	mov    $0x6a16,%edi
+ ad3:	38 04 00             	cmp    %al,(%eax,%eax,1)
+ ad6:	00 bf 16 6a 00 00    	add    %bh,0x6a16(%edi)
  adc:	00 00                	add    %al,(%eax)
- ade:	01 94 02 00 00 c0 16 	add    %edx,0x16c00000(%edx,%eax,1)
+ ade:	01 a8 02 00 00 c0    	add    %ebp,-0x3ffffffe(%eax)
+ ae4:	16                   	push   %ss
  ae5:	6a 00                	push   $0x0
  ae7:	00 00                	add    %al,(%eax)
  ae9:	04 01                	add    $0x1,%al
- aeb:	f6 03 00             	testb  $0x0,(%ebx)
+ aeb:	0a 04 00             	or     (%eax,%eax,1),%al
  aee:	00 c1                	add    %al,%cl
  af0:	16                   	push   %ss
  af1:	6a 00                	push   $0x0
  af3:	00 00                	add    %al,(%eax)
  af5:	08 01                	or     %al,(%ecx)
- af7:	84 04 00             	test   %al,(%eax,%eax,1)
+ af7:	98                   	cwtl   
+ af8:	04 00                	add    $0x0,%al
  afa:	00 c2                	add    %al,%dl
  afc:	16                   	push   %ss
  afd:	6a 00                	push   $0x0
@@ -4345,184 +4340,178 @@ Disassembly of section .debug_info:
  b12:	6a 00                	push   $0x0
  b14:	00 00                	add    %al,(%eax)
  b16:	00 01                	add    %al,(%ecx)
- b18:	27                   	daa    
- b19:	04 00                	add    $0x0,%al
+ b18:	3b 04 00             	cmp    (%eax,%eax,1),%eax
  b1b:	00 c6                	add    %al,%dh
  b1d:	16                   	push   %ss
  b1e:	6a 00                	push   $0x0
  b20:	00 00                	add    %al,(%eax)
  b22:	04 01                	add    $0x1,%al
- b24:	f6 03 00             	testb  $0x0,(%ebx)
+ b24:	0a 04 00             	or     (%eax,%eax,1),%al
  b27:	00 c7                	add    %al,%bh
  b29:	16                   	push   %ss
  b2a:	6a 00                	push   $0x0
  b2c:	00 00                	add    %al,(%eax)
  b2e:	08 01                	or     %al,(%ecx)
- b30:	bd 02 00 00 c8       	mov    $0xc8000002,%ebp
- b35:	16                   	push   %ss
- b36:	6a 00                	push   $0x0
+ b30:	d1 02                	roll   (%edx)
+ b32:	00 00                	add    %al,(%eax)
+ b34:	c8 16 6a 00          	enter  $0x6a16,$0x0
  b38:	00 00                	add    %al,(%eax)
  b3a:	0c 00                	or     $0x0,%al
  b3c:	16                   	push   %ss
  b3d:	10 02                	adc    %al,(%edx)
  b3f:	bd 05 e9 03 00       	mov    $0x3e905,%ebp
  b44:	00 17                	add    %dl,(%edi)
- b46:	8f 02                	pop    (%edx)
- b48:	00 00                	add    %al,(%eax)
- b4a:	02 c3                	add    %bl,%al
+ b46:	a3 02 00 00 02       	mov    %eax,0x2000002
+ b4b:	c3                   	ret    
  b4c:	0b 55 03             	or     0x3(%ebp),%edx
  b4f:	00 00                	add    %al,(%eax)
  b51:	18 65 6c             	sbb    %ah,0x6c(%ebp)
  b54:	66 00 02             	data16 add %al,(%edx)
  b57:	c9                   	leave  
  b58:	0b 8e 03 00 00 00    	or     0x3(%esi),%ecx
- b5e:	0b 7d 03             	or     0x3(%ebp),%edi
- b61:	00 00                	add    %al,(%eax)
- b63:	60                   	pusha  
+ b5e:	0b 91 03 00 00 60    	or     0x60000003(%ecx),%edx
  b64:	a5                   	movsl  %ds:(%esi),%es:(%edi)
  b65:	f1                   	int1   
  b66:	04 00                	add    $0x0,%al
  b68:	00 01                	add    %al,(%ecx)
- b6a:	55                   	push   %ebp
- b6b:	02 00                	add    (%eax),%al
- b6d:	00 a6 0e 6a 00 00    	add    %ah,0x6a0e(%esi)
- b73:	00 00                	add    %al,(%eax)
- b75:	01 50 03             	add    %edx,0x3(%eax)
- b78:	00 00                	add    %al,(%eax)
- b7a:	a9 0e 6a 00 00       	test   $0x6a0e,%eax
+ b6a:	69 02 00 00 a6 0e    	imul   $0xea60000,(%edx),%eax
+ b70:	6a 00                	push   $0x0
+ b72:	00 00                	add    %al,(%eax)
+ b74:	00 01                	add    %al,(%ecx)
+ b76:	64 03 00             	add    %fs:(%eax),%eax
+ b79:	00 a9 0e 6a 00 00    	add    %ch,0x6a0e(%ecx)
  b7f:	00 04 01             	add    %al,(%ecx,%eax,1)
- b82:	0c 04                	or     $0x4,%al
- b84:	00 00                	add    %al,(%eax)
- b86:	aa                   	stos   %al,%es:(%edi)
- b87:	0e                   	push   %cs
- b88:	6a 00                	push   $0x0
- b8a:	00 00                	add    %al,(%eax)
- b8c:	08 01                	or     %al,(%ecx)
- b8e:	b7 03                	mov    $0x3,%bh
- b90:	00 00                	add    %al,(%eax)
- b92:	b2 07                	mov    $0x7,%dl
- b94:	1c 03                	sbb    $0x3,%al
- b96:	00 00                	add    %al,(%eax)
- b98:	0c 01                	or     $0x1,%al
- b9a:	5b                   	pop    %ebx
+ b82:	20 04 00             	and    %al,(%eax,%eax,1)
+ b85:	00 aa 0e 6a 00 00    	add    %ch,0x6a0e(%edx)
+ b8b:	00 08                	add    %cl,(%eax)
+ b8d:	01 cb                	add    %ecx,%ebx
+ b8f:	03 00                	add    (%eax),%eax
+ b91:	00 b2 07 1c 03 00    	add    %dh,0x31c07(%edx)
+ b97:	00 0c 01             	add    %cl,(%ecx,%eax,1)
+ b9a:	6f                   	outsl  %ds:(%esi),(%dx)
  b9b:	02 00                	add    (%eax),%al
  b9d:	00 b5 0e 6a 00 00    	add    %dh,0x6a0e(%ebp)
  ba3:	00 10                	add    %dl,(%eax)
- ba5:	01 79 04             	add    %edi,0x4(%ecx)
- ba8:	00 00                	add    %al,(%eax)
- baa:	b9 0e 6a 00 00       	mov    $0x6a0e,%ecx
- baf:	00 14 01             	add    %dl,(%ecx,%eax,1)
- bb2:	85 02                	test   %eax,(%edx)
- bb4:	00 00                	add    %al,(%eax)
- bb6:	ba 0e 6a 00 00       	mov    $0x6a0e,%edx
+ ba5:	01 8d 04 00 00 b9    	add    %ecx,-0x46fffffc(%ebp)
+ bab:	0e                   	push   %cs
+ bac:	6a 00                	push   $0x0
+ bae:	00 00                	add    %al,(%eax)
+ bb0:	14 01                	adc    $0x1,%al
+ bb2:	99                   	cltd   
+ bb3:	02 00                	add    (%eax),%al
+ bb5:	00 ba 0e 6a 00 00    	add    %bh,0x6a0e(%edx)
  bbb:	00 18                	add    %bl,(%eax)
- bbd:	01 63 03             	add    %esp,0x3(%ebx)
+ bbd:	01 77 03             	add    %esi,0x3(%edi)
  bc0:	00 00                	add    %al,(%eax)
  bc2:	ca 07 c7             	lret   $0xc707
  bc5:	03 00                	add    (%eax),%eax
  bc7:	00 1c 01             	add    %bl,(%ecx,%eax,1)
- bca:	71 03                	jno    bcf <PR_BOOTABLE+0xb4f>
+ bca:	85 03                	test   %eax,(%ebx)
  bcc:	00 00                	add    %al,(%eax)
  bce:	cd 0e                	int    $0xe
  bd0:	6a 00                	push   $0x0
  bd2:	00 00                	add    %al,(%eax)
  bd4:	2c 01                	sub    $0x1,%al
- bd6:	f7 01 00 00 cf 0e    	testl  $0xecf0000,(%ecx)
+ bd6:	0b 02                	or     (%edx),%eax
+ bd8:	00 00                	add    %al,(%eax)
+ bda:	cf                   	iret   
+ bdb:	0e                   	push   %cs
  bdc:	6a 00                	push   $0x0
  bde:	00 00                	add    %al,(%eax)
  be0:	30 01                	xor    %al,(%ecx)
- be2:	36 04 00             	ss add $0x0,%al
+ be2:	4a                   	dec    %edx
+ be3:	04 00                	add    $0x0,%al
  be5:	00 d3                	add    %dl,%bl
  be7:	0e                   	push   %cs
  be8:	6a 00                	push   $0x0
  bea:	00 00                	add    %al,(%eax)
  bec:	34 01                	xor    $0x1,%al
- bee:	d0 02                	rolb   (%edx)
+ bee:	e4 02                	in     $0x2,%al
  bf0:	00 00                	add    %al,(%eax)
  bf2:	d4 0e                	aam    $0xe
  bf4:	6a 00                	push   $0x0
  bf6:	00 00                	add    %al,(%eax)
  bf8:	38 01                	cmp    %al,(%ecx)
- bfa:	d3 03                	roll   %cl,(%ebx)
+ bfa:	e7 03                	out    %eax,$0x3
  bfc:	00 00                	add    %al,(%eax)
  bfe:	d7                   	xlat   %ds:(%ebx)
  bff:	0e                   	push   %cs
  c00:	6a 00                	push   $0x0
  c02:	00 00                	add    %al,(%eax)
  c04:	3c 01                	cmp    $0x1,%al
- c06:	8e 04 00             	mov    (%eax,%eax,1),%es
- c09:	00 da                	add    %bl,%dl
+ c06:	a2 04 00 00 da       	mov    %al,0xda000004
  c0b:	0e                   	push   %cs
  c0c:	6a 00                	push   $0x0
  c0e:	00 00                	add    %al,(%eax)
  c10:	40                   	inc    %eax
- c11:	01 c2                	add    %eax,%edx
+ c11:	01 d6                	add    %edx,%esi
  c13:	04 00                	add    $0x0,%al
  c15:	00 dd                	add    %bl,%ch
  c17:	0e                   	push   %cs
  c18:	6a 00                	push   $0x0
  c1a:	00 00                	add    %al,(%eax)
  c1c:	44                   	inc    %esp
- c1d:	01 8d 03 00 00 e0    	add    %ecx,-0x1ffffffd(%ebp)
+ c1d:	01 a1 03 00 00 e0    	add    %esp,-0x1ffffffd(%ecx)
  c23:	0e                   	push   %cs
  c24:	6a 00                	push   $0x0
  c26:	00 00                	add    %al,(%eax)
  c28:	48                   	dec    %eax
- c29:	01 16                	add    %edx,(%esi)
+ c29:	01 2a                	add    %ebp,(%edx)
  c2b:	04 00                	add    $0x0,%al
  c2d:	00 e1                	add    %ah,%cl
  c2f:	0e                   	push   %cs
  c30:	6a 00                	push   $0x0
  c32:	00 00                	add    %al,(%eax)
  c34:	4c                   	dec    %esp
- c35:	01 fb                	add    %edi,%ebx
- c37:	03 00                	add    (%eax),%eax
+ c35:	01 0f                	add    %ecx,(%edi)
+ c37:	04 00                	add    $0x0,%al
  c39:	00 e2                	add    %ah,%dl
  c3b:	0e                   	push   %cs
  c3c:	6a 00                	push   $0x0
  c3e:	00 00                	add    %al,(%eax)
  c40:	50                   	push   %eax
- c41:	01 9f 04 00 00 e3    	add    %ebx,-0x1cfffffc(%edi)
+ c41:	01 b3 04 00 00 e3    	add    %esi,-0x1cfffffc(%ebx)
  c47:	0e                   	push   %cs
  c48:	6a 00                	push   $0x0
  c4a:	00 00                	add    %al,(%eax)
  c4c:	54                   	push   %esp
- c4d:	01 08                	add    %ecx,(%eax)
- c4f:	02 00                	add    (%eax),%al
- c51:	00 e4                	add    %ah,%ah
- c53:	0e                   	push   %cs
+ c4d:	01 1c 02             	add    %ebx,(%edx,%eax,1)
+ c50:	00 00                	add    %al,(%eax)
+ c52:	e4 0e                	in     $0xe,%al
  c54:	6a 00                	push   $0x0
  c56:	00 00                	add    %al,(%eax)
  c58:	58                   	pop    %eax
- c59:	01 5f 04             	add    %ebx,0x4(%edi)
+ c59:	01 73 04             	add    %esi,0x4(%ebx)
  c5c:	00 00                	add    %al,(%eax)
  c5e:	e5 0e                	in     $0xe,%eax
  c60:	6a 00                	push   $0x0
  c62:	00 00                	add    %al,(%eax)
  c64:	5c                   	pop    %esp
  c65:	00 03                	add    %al,(%ebx)
- c67:	fb                   	sti    
- c68:	02 00                	add    (%eax),%al
+ c67:	0f 03 00             	lsl    (%eax),%eax
  c6a:	00 e6                	add    %ah,%dh
  c6c:	03 e9                	add    %ecx,%ebp
  c6e:	03 00                	add    (%eax),%eax
  c70:	00 19                	add    %bl,(%ecx)
- c72:	7d 03                	jge    c77 <PR_BOOTABLE+0xbf7>
- c74:	00 00                	add    %al,(%eax)
- c76:	01 08                	add    %ecx,(%eax)
- c78:	0e                   	push   %cs
+ c72:	91                   	xchg   %eax,%ecx
+ c73:	03 00                	add    (%eax),%eax
+ c75:	00 01                	add    %al,(%ecx)
+ c77:	08 0e                	or     %cl,(%esi)
  c79:	f1                   	int1   
  c7a:	04 00                	add    $0x0,%al
  c7c:	00 05 03 a0 93 00    	add    %al,0x93a003
  c82:	00 07                	add    %al,(%edi)
- c84:	7c 00                	jl     c86 <PR_BOOTABLE+0xc06>
- c86:	00 00                	add    %al,(%eax)
- c88:	02 4a 06             	add    0x6(%edx),%cl
+ c84:	90                   	nop
+ c85:	00 00                	add    %al,(%eax)
+ c87:	00 02                	add    %al,(%edx)
+ c89:	4a                   	dec    %edx
+ c8a:	06                   	push   %es
  c8b:	20 05 00 00 04 58    	and    %al,0x58040000
  c91:	00 00                	add    %al,(%eax)
  c93:	00 00                	add    %al,(%eax)
  c95:	07                   	pop    %es
- c96:	3e 01 00             	add    %eax,%ds:(%eax)
+ c96:	52                   	push   %edx
+ c97:	01 00                	add    %eax,(%eax)
  c99:	00 02                	add    %al,(%edx)
  c9b:	70 06                	jo     ca3 <PR_BOOTABLE+0xc23>
  c9d:	41                   	inc    %ecx
@@ -4536,7 +4525,7 @@ Disassembly of section .debug_info:
  cb2:	00 00                	add    %al,(%eax)
  cb4:	00 00                	add    %al,(%eax)
  cb6:	07                   	pop    %es
- cb7:	79 02                	jns    cbb <PR_BOOTABLE+0xc3b>
+ cb7:	8d 02                	lea    (%edx),%eax
  cb9:	00 00                	add    %al,(%eax)
  cbb:	01 06                	add    %eax,(%esi)
  cbd:	0d 58 05 00 00       	or     $0x558,%eax
@@ -4547,37 +4536,36 @@ Disassembly of section .debug_info:
  cce:	f1                   	int1   
  ccf:	04 00                	add    $0x0,%al
  cd1:	00 07                	add    %al,(%edi)
- cd3:	76 00                	jbe    cd5 <PR_BOOTABLE+0xc55>
+ cd3:	8a 00                	mov    (%eax),%al
  cd5:	00 00                	add    %al,(%eax)
  cd7:	02 4c 06 6f          	add    0x6f(%esi,%eax,1),%cl
  cdb:	05 00 00 04 6f       	add    $0x6f040000,%eax
  ce0:	05 00 00 00 09       	add    $0x9000000,%eax
  ce5:	74 05                	je     cec <PR_BOOTABLE+0xc6c>
  ce7:	00 00                	add    %al,(%eax)
- ce9:	05 01 06 58 01       	add    $0x1580601,%eax
+ ce9:	05 01 06 6c 01       	add    $0x16c0601,%eax
  cee:	00 00                	add    %al,(%eax)
  cf0:	07                   	pop    %es
- cf1:	52                   	push   %edx
- cf2:	00 00                	add    %al,(%eax)
+ cf1:	66 00 00             	data16 add %al,(%eax)
  cf4:	00 02                	add    %al,(%edx)
  cf6:	49                   	dec    %ecx
  cf7:	06                   	push   %es
  cf8:	8d 05 00 00 04 6f    	lea    0x6f040000,%eax
  cfe:	05 00 00 00 07       	add    $0x7000000,%eax
- d03:	6a 00                	push   $0x0
+ d03:	7e 00                	jle    d05 <PR_BOOTABLE+0xc85>
  d05:	00 00                	add    %al,(%eax)
  d07:	02 4b 06             	add    0x6(%ebx),%cl
  d0a:	9f                   	lahf   
  d0b:	05 00 00 04 63       	add    $0x63040000,%eax
  d10:	00 00                	add    %al,(%eax)
  d12:	00 00                	add    %al,(%eax)
- d14:	10 a6 03 00 00 41    	adc    %ah,0x41000003(%esi)
+ d14:	10 ba 03 00 00 41    	adc    %bh,0x41000003(%edx)
  d1a:	0f 58 05 00 00 70 8e 	addps  0x8e700000,%xmm0
  d21:	00 00                	add    %al,(%eax)
  d23:	70 00                	jo     d25 <PR_BOOTABLE+0xca5>
  d25:	00 00                	add    %al,(%eax)
  d27:	01 9c fc 05 00 00 11 	add    %ebx,0x11000005(%esp,%edi,8)
- d2e:	4b                   	dec    %ebx
+ d2e:	5f                   	pop    %edi
  d2f:	03 00                	add    (%eax),%eax
  d31:	00 41 27             	add    %al,0x27(%ecx)
  d34:	fc                   	cld    
@@ -4588,10 +4576,8 @@ Disassembly of section .debug_info:
  d41:	05 00 00 c9 03       	add    $0x3c90000,%eax
  d46:	00 00                	add    %al,(%eax)
  d48:	bd 03 00 00 0e       	mov    $0xe000003,%ebp
- d4d:	b1 04                	mov    $0x4,%cl
- d4f:	00 00                	add    %al,(%eax)
- d51:	44                   	inc    %esp
- d52:	6a 00                	push   $0x0
+ d4d:	c5 04 00             	lds    (%eax,%eax,1),%eax
+ d50:	00 44 6a 00          	add    %al,0x0(%edx,%ebp,2)
  d54:	00 00                	add    %al,(%eax)
  d56:	22 04 00             	and    (%eax,%eax,1),%al
  d59:	00 18                	add    %bl,(%eax)
@@ -4604,17 +4590,17 @@ Disassembly of section .debug_info:
  d67:	02 b0 8e 00 00 0e    	add    0xe00008e(%eax),%dh
  d6d:	05 00 00 00 09       	add    $0x9000000,%eax
  d72:	bf 01 00 00 10       	mov    $0x10000001,%edi
- d77:	2b 02                	sub    (%edx),%eax
- d79:	00 00                	add    %al,(%eax)
- d7b:	2b 0a                	sub    (%edx),%ecx
- d7d:	6a 00                	push   $0x0
+ d77:	3f                   	aas    
+ d78:	02 00                	add    (%eax),%al
+ d7a:	00 2b                	add    %ch,(%ebx)
+ d7c:	0a 6a 00             	or     0x0(%edx),%ch
  d7f:	00 00                	add    %al,(%eax)
  d81:	e1 8d                	loope  d10 <PR_BOOTABLE+0xc90>
  d83:	00 00                	add    %al,(%eax)
  d85:	8f 00                	pop    (%eax)
  d87:	00 00                	add    %al,(%eax)
  d89:	01 9c 69 06 00 00 11 	add    %ebx,0x11000006(%ecx,%ebp,2)
- d90:	c3                   	ret    
+ d90:	d7                   	xlat   %ds:(%ebx)
  d91:	03 00                	add    (%eax),%eax
  d93:	00 2b                	add    %ch,(%ebx)
  d95:	1f                   	pop    %ds
@@ -4644,7 +4630,9 @@ Disassembly of section .debug_info:
  dd9:	20 05 00 00 00 09    	and    %al,0x9000000
  ddf:	11 03                	adc    %eax,(%ebx)
  de1:	00 00                	add    %al,(%eax)
- de3:	1a 15 03 00 00 01    	sbb    0x1000003,%dl
+ de3:	1a 29                	sbb    (%ecx),%ch
+ de5:	03 00                	add    (%eax),%eax
+ de7:	00 01                	add    %al,(%ecx)
  de9:	0a 06                	or     (%esi),%al
  deb:	e0 8e                	loopne d7b <PR_BOOTABLE+0xcfb>
  ded:	00 00                	add    %al,(%eax)
@@ -4663,7 +4651,7 @@ Disassembly of section .debug_info:
  e16:	00 00                	add    %al,(%eax)
  e18:	6f                   	outsl  %ds:(%esi),(%dx)
  e19:	04 00                	add    $0x0,%al
- e1b:	00 1d 4b 03 00 00    	add    %bl,0x34b
+ e1b:	00 1d 5f 03 00 00    	add    %bl,0x35f
  e21:	01 0a                	add    %ecx,(%edx)
  e23:	37                   	aaa    
  e24:	fc                   	cld    
@@ -4677,7 +4665,7 @@ Disassembly of section .debug_info:
  e39:	9d                   	popf   
  e3a:	04 00                	add    $0x0,%al
  e3c:	00 99 04 00 00 0e    	add    %bl,0xe000004(%ecx)
- e42:	08 03                	or     %al,(%ebx)
+ e42:	1c 03                	sbb    $0x3,%al
  e44:	00 00                	add    %al,(%eax)
  e46:	11 6a 00             	adc    %ebp,0x0(%edx)
  e49:	00 00                	add    %al,(%eax)
@@ -4686,7 +4674,7 @@ Disassembly of section .debug_info:
  e4f:	ad                   	lods   %ds:(%esi),%eax
  e50:	04 00                	add    $0x0,%al
  e52:	00 0e                	add    %cl,(%esi)
- e54:	1c 02                	sbb    $0x2,%al
+ e54:	30 02                	xor    %al,(%edx)
  e56:	00 00                	add    %al,(%eax)
  e58:	1f                   	pop    %ds
  e59:	6a 00                	push   $0x0
@@ -4739,12 +4727,12 @@ Disassembly of section .debug_info:
  ece:	9b                   	fwait
  ecf:	8f 00                	pop    (%eax)
  ed1:	00 10                	add    %dl,(%eax)
- ed3:	df 04 00             	filds  (%eax,%eax,1)
+ ed3:	f3 04 00             	repz add $0x0,%al
  ed6:	00 13                	add    %dl,(%ebx)
  ed8:	00 00                	add    %al,(%eax)
- eda:	00 36                	add    %dh,(%esi)
- edc:	00 00                	add    %al,(%eax)
- ede:	00 01                	add    %al,(%ecx)
+ eda:	00 4a 00             	add    %cl,0x0(%edx)
+ edd:	00 00                	add    %al,(%eax)
+ edf:	01                   	.byte 0x1
  ee0:	80                   	.byte 0x80
 
 Disassembly of section .debug_abbrev:
@@ -5279,17 +5267,17 @@ Disassembly of section .debug_line:
   20:	1f                   	pop    %ds
   21:	02 00                	add    (%eax),%al
   23:	00 00                	add    %al,(%eax)
-  25:	00 23                	add    %ah,(%ebx)
+  25:	00 37                	add    %dh,(%edi)
   27:	00 00                	add    %al,(%eax)
   29:	00 02                	add    %al,(%edx)
   2b:	01 1f                	add    %ebx,(%edi)
   2d:	02 0f                	add    (%edi),%cl
-  2f:	02 2e                	add    (%esi),%ch
-  31:	00 00                	add    %al,(%eax)
-  33:	00 01                	add    %al,(%ecx)
-  35:	2e 00 00             	add    %al,%cs:(%eax)
-  38:	00 01                	add    %al,(%ecx)
-  3a:	00 05 02 00 7e 00    	add    %al,0x7e0002
+  2f:	02 42 00             	add    0x0(%edx),%al
+  32:	00 00                	add    %al,(%eax)
+  34:	01 42 00             	add    %eax,0x0(%edx)
+  37:	00 00                	add    %al,(%eax)
+  39:	01 00                	add    %eax,(%eax)
+  3b:	05 02 00 7e 00       	add    $0x7e0002,%eax
   40:	00 03                	add    %al,(%ebx)
   42:	29 01                	sub    %eax,(%ecx)
   44:	21 24 2f             	and    %esp,(%edi,%ebp,1)
@@ -5344,18 +5332,18 @@ Disassembly of section .debug_line:
   a7:	1f                   	pop    %ds
   a8:	02 00                	add    (%eax),%al
   aa:	00 00                	add    %al,(%eax)
-  ac:	00 23                	add    %ah,(%ebx)
+  ac:	00 37                	add    %dh,(%edi)
   ae:	00 00                	add    %al,(%eax)
   b0:	00 02                	add    %al,(%edx)
   b2:	01 1f                	add    %ebx,(%edi)
   b4:	02 0f                	add    (%edi),%cl
-  b6:	03 41 00             	add    0x0(%ecx),%eax
+  b6:	03 55 00             	add    0x0(%ebp),%edx
   b9:	00 00                	add    %al,(%eax)
-  bb:	01 41 00             	add    %eax,0x0(%ecx)
+  bb:	01 55 00             	add    %edx,0x0(%ebp)
   be:	00 00                	add    %al,(%eax)
-  c0:	01 4c 00 00          	add    %ecx,0x0(%eax,%eax,1)
-  c4:	00 01                	add    %al,(%ecx)
-  c6:	05 01 00 05 02       	add    $0x2050001,%eax
+  c0:	01 60 00             	add    %esp,0x0(%eax)
+  c3:	00 00                	add    %al,(%eax)
+  c5:	01 05 01 00 05 02    	add    %eax,0x2050001
   cb:	26 8b 00             	mov    %es:(%eax),%eax
   ce:	00 1a                	add    %bl,(%edx)
   d0:	05 05 13 05 01       	add    $0x1051305,%eax
@@ -5674,18 +5662,18 @@ Disassembly of section .debug_line:
  4ca:	1f                   	pop    %ds
  4cb:	02 00                	add    (%eax),%al
  4cd:	00 00                	add    %al,(%eax)
- 4cf:	00 23                	add    %ah,(%ebx)
+ 4cf:	00 37                	add    %dh,(%edi)
  4d1:	00 00                	add    %al,(%eax)
  4d3:	00 02                	add    %al,(%edx)
  4d5:	01 1f                	add    %ebx,(%edi)
  4d7:	02 0f                	add    (%edi),%cl
- 4d9:	03 62 00             	add    0x0(%edx),%esp
+ 4d9:	03 76 00             	add    0x0(%esi),%esi
  4dc:	00 00                	add    %al,(%eax)
- 4de:	01 62 00             	add    %esp,0x0(%edx)
+ 4de:	01 76 00             	add    %esi,0x0(%esi)
  4e1:	00 00                	add    %al,(%eax)
- 4e3:	01 4c 00 00          	add    %ecx,0x0(%eax,%eax,1)
- 4e7:	00 01                	add    %al,(%ecx)
- 4e9:	05 01 00 05 02       	add    $0x2050001,%eax
+ 4e3:	01 60 00             	add    %esp,0x0(%eax)
+ 4e6:	00 00                	add    %al,(%eax)
+ 4e8:	01 05 01 00 05 02    	add    %eax,0x2050001
  4ee:	e1 8d                	loope  47d <PR_BOOTABLE+0x3fd>
  4f0:	00 00                	add    %al,(%eax)
  4f2:	03 2b                	add    (%ebx),%ebp
@@ -5803,17 +5791,15 @@ Disassembly of section .debug_line:
  662:	1f                   	pop    %ds
  663:	02 00                	add    (%eax),%al
  665:	00 00                	add    %al,(%eax)
- 667:	00 23                	add    %ah,(%ebx)
+ 667:	00 37                	add    %dh,(%edi)
  669:	00 00                	add    %al,(%eax)
  66b:	00 02                	add    %al,(%edx)
  66d:	01 1f                	add    %ebx,(%edi)
  66f:	02 0f                	add    (%edi),%cl
- 671:	02 6e 00             	add    0x0(%esi),%ch
- 674:	00 00                	add    %al,(%eax)
- 676:	01 6e 00             	add    %ebp,0x0(%esi)
- 679:	00 00                	add    %al,(%eax)
- 67b:	01 00                	add    %eax,(%eax)
- 67d:	05 02 9b 8f 00       	add    $0x8f9b02,%eax
+ 671:	02 82 00 00 00 01    	add    0x1000000(%edx),%al
+ 677:	82 00 00             	addb   $0x0,(%eax)
+ 67a:	00 01                	add    %al,(%ecx)
+ 67c:	00 05 02 9b 8f 00    	add    %al,0x8f9b02
  682:	00 17                	add    %dl,(%edi)
  684:	21 59 4b             	and    %ebx,0x4b(%ecx)
  687:	4b                   	dec    %ebx
@@ -5837,509 +5823,519 @@ Disassembly of section .debug_str:
   19:	73 61                	jae    7c <PROT_MODE_DSEG+0x6c>
   1b:	72 61                	jb     7e <PROT_MODE_DSEG+0x6e>
   1d:	6a 2f                	push   $0x2f
-  1f:	79 61                	jns    82 <PR_BOOTABLE+0x2>
-  21:	6c                   	insb   (%dx),%es:(%edi)
-  22:	65 2d 63 70 73 63    	gs sub $0x63737063,%eax
-  28:	34 32                	xor    $0x32,%al
-  2a:	32 2f                	xor    (%edi),%ch
-  2c:	6d                   	insl   (%dx),%es:(%edi)
-  2d:	63 65 72             	arpl   %sp,0x72(%ebp)
-  30:	74 69                	je     9b <PR_BOOTABLE+0x1b>
-  32:	6b 6f 73 00          	imul   $0x0,0x73(%edi),%ebp
-  36:	47                   	inc    %edi
-  37:	4e                   	dec    %esi
-  38:	55                   	push   %ebp
-  39:	20 41 53             	and    %al,0x53(%ecx)
-  3c:	20 32                	and    %dh,(%edx)
-  3e:	2e 33 38             	xor    %cs:(%eax),%edi
-  41:	00 65 6e             	add    %ah,0x6e(%ebp)
-  44:	64 5f                	fs pop %edi
-  46:	76 61                	jbe    a9 <PR_BOOTABLE+0x29>
-  48:	00 77 61             	add    %dh,0x61(%edi)
-  4b:	69 74 64 69 73 6b 00 	imul   $0x70006b73,0x69(%esp,%eiz,2),%esi
-  52:	70 
-  53:	75 74                	jne    c9 <PR_BOOTABLE+0x49>
-  55:	6c                   	insb   (%dx),%es:(%edi)
-  56:	69 6e 65 00 73 68 6f 	imul   $0x6f687300,0x65(%esi),%ebp
-  5d:	72 74                	jb     d3 <PR_BOOTABLE+0x53>
-  5f:	20 69 6e             	and    %ch,0x6e(%ecx)
-  62:	74 00                	je     64 <PROT_MODE_DSEG+0x54>
-  64:	63 6f 6c             	arpl   %bp,0x6c(%edi)
-  67:	6f                   	outsl  %ds:(%esi),(%dx)
-  68:	72 00                	jb     6a <PROT_MODE_DSEG+0x5a>
-  6a:	72 6f                	jb     db <PR_BOOTABLE+0x5b>
-  6c:	6c                   	insb   (%dx),%es:(%edi)
-  6d:	6c                   	insb   (%dx),%es:(%edi)
-  6e:	00 73 74             	add    %dh,0x74(%ebx)
-  71:	72 69                	jb     dc <PR_BOOTABLE+0x5c>
-  73:	6e                   	outsb  %ds:(%esi),(%dx)
-  74:	67 00 70 61          	add    %dh,0x61(%bx,%si)
-  78:	6e                   	outsb  %ds:(%esi),(%dx)
-  79:	69 63 00 70 75 74 69 	imul   $0x69747570,0x0(%ebx),%esp
-  80:	00 72 65             	add    %dh,0x65(%edx)
-  83:	61                   	popa   
-  84:	64 73 65             	fs jae ec <PR_BOOTABLE+0x6c>
-  87:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
-  8b:	00 75 69             	add    %dh,0x69(%ebp)
-  8e:	6e                   	outsb  %ds:(%esi),(%dx)
-  8f:	74 38                	je     c9 <PR_BOOTABLE+0x49>
-  91:	5f                   	pop    %edi
-  92:	74 00                	je     94 <PR_BOOTABLE+0x14>
-  94:	6f                   	outsl  %ds:(%esi),(%dx)
-  95:	75 74                	jne    10b <PR_BOOTABLE+0x8b>
-  97:	62 00                	bound  %eax,(%eax)
-  99:	69 6e 73 6c 00 6c 6f 	imul   $0x6f6c006c,0x73(%esi),%ebp
-  a0:	6e                   	outsb  %ds:(%esi),(%dx)
-  a1:	67 20 6c 6f          	and    %ch,0x6f(%si)
-  a5:	6e                   	outsb  %ds:(%esi),(%dx)
-  a6:	67 20 69 6e          	and    %ch,0x6e(%bx,%di)
-  aa:	74 00                	je     ac <PR_BOOTABLE+0x2c>
-  ac:	47                   	inc    %edi
-  ad:	4e                   	dec    %esi
-  ae:	55                   	push   %ebp
-  af:	20 43 31             	and    %al,0x31(%ebx)
-  b2:	37                   	aaa    
-  b3:	20 31                	and    %dh,(%ecx)
-  b5:	31 2e                	xor    %ebp,(%esi)
-  b7:	34 2e                	xor    $0x2e,%al
-  b9:	30 20                	xor    %ah,(%eax)
-  bb:	2d 6d 33 32 20       	sub    $0x2032336d,%eax
-  c0:	2d 6d 74 75 6e       	sub    $0x6e75746d,%eax
-  c5:	65 3d 67 65 6e 65    	gs cmp $0x656e6567,%eax
-  cb:	72 69                	jb     136 <PR_BOOTABLE+0xb6>
-  cd:	63 20                	arpl   %sp,(%eax)
-  cf:	2d 6d 61 72 63       	sub    $0x6372616d,%eax
-  d4:	68 3d 69 36 38       	push   $0x3836693d
-  d9:	36 20 2d 67 20 2d 4f 	and    %ch,%ss:0x4f2d2067
-  e0:	73 20                	jae    102 <PR_BOOTABLE+0x82>
-  e2:	2d 4f 73 20 2d       	sub    $0x2d20734f,%eax
-  e7:	66 6e                	data16 outsb %ds:(%esi),(%dx)
-  e9:	6f                   	outsl  %ds:(%esi),(%dx)
-  ea:	2d 62 75 69 6c       	sub    $0x6c697562,%eax
-  ef:	74 69                	je     15a <PR_BOOTABLE+0xda>
-  f1:	6e                   	outsb  %ds:(%esi),(%dx)
-  f2:	20 2d 66 6e 6f 2d    	and    %ch,0x2d6f6e66
-  f8:	73 74                	jae    16e <PR_BOOTABLE+0xee>
-  fa:	61                   	popa   
-  fb:	63 6b 2d             	arpl   %bp,0x2d(%ebx)
-  fe:	70 72                	jo     172 <PR_BOOTABLE+0xf2>
- 100:	6f                   	outsl  %ds:(%esi),(%dx)
- 101:	74 65                	je     168 <PR_BOOTABLE+0xe8>
- 103:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
- 107:	20 2d 66 61 73 79    	and    %ch,0x79736166
- 10d:	6e                   	outsb  %ds:(%esi),(%dx)
- 10e:	63 68 72             	arpl   %bp,0x72(%eax)
- 111:	6f                   	outsl  %ds:(%esi),(%dx)
- 112:	6e                   	outsb  %ds:(%esi),(%dx)
- 113:	6f                   	outsl  %ds:(%esi),(%dx)
- 114:	75 73                	jne    189 <PR_BOOTABLE+0x109>
- 116:	2d 75 6e 77 69       	sub    $0x69776e75,%eax
- 11b:	6e                   	outsb  %ds:(%esi),(%dx)
- 11c:	64 2d 74 61 62 6c    	fs sub $0x6c626174,%eax
- 122:	65 73 20             	gs jae 145 <PR_BOOTABLE+0xc5>
- 125:	2d 66 73 74 61       	sub    $0x61747366,%eax
- 12a:	63 6b 2d             	arpl   %bp,0x2d(%ebx)
- 12d:	63 6c 61 73          	arpl   %bp,0x73(%ecx,%eiz,2)
- 131:	68 2d 70 72 6f       	push   $0x6f72702d
- 136:	74 65                	je     19d <PR_BOOTABLE+0x11d>
- 138:	63 74 69 6f          	arpl   %si,0x6f(%ecx,%ebp,2)
- 13c:	6e                   	outsb  %ds:(%esi),(%dx)
- 13d:	00 72 65             	add    %dh,0x65(%edx)
- 140:	61                   	popa   
- 141:	64 73 65             	fs jae 1a9 <PR_BOOTABLE+0x129>
- 144:	63 74 69 6f          	arpl   %si,0x6f(%ecx,%ebp,2)
- 148:	6e                   	outsb  %ds:(%esi),(%dx)
- 149:	00 69 74             	add    %ch,0x74(%ecx)
- 14c:	6f                   	outsl  %ds:(%esi),(%dx)
- 14d:	61                   	popa   
- 14e:	00 75 6e             	add    %dh,0x6e(%ebp)
- 151:	73 69                	jae    1bc <PR_BOOTABLE+0x13c>
- 153:	67 6e                	outsb  %ds:(%si),(%dx)
- 155:	65 64 20 63 68       	gs and %ah,%fs:0x68(%ebx)
- 15a:	61                   	popa   
- 15b:	72 00                	jb     15d <PR_BOOTABLE+0xdd>
- 15d:	69 74 6f 68 00 70 75 	imul   $0x74757000,0x68(%edi,%ebp,2),%esi
- 164:	74 
- 165:	63 00                	arpl   %ax,(%eax)
- 167:	6c                   	insb   (%dx),%es:(%edi)
- 168:	6f                   	outsl  %ds:(%esi),(%dx)
- 169:	6e                   	outsb  %ds:(%esi),(%dx)
- 16a:	67 20 6c 6f          	and    %ch,0x6f(%si)
- 16e:	6e                   	outsb  %ds:(%esi),(%dx)
- 16f:	67 20 75 6e          	and    %dh,0x6e(%di)
- 173:	73 69                	jae    1de <PR_BOOTABLE+0x15e>
- 175:	67 6e                	outsb  %ds:(%si),(%dx)
- 177:	65 64 20 69 6e       	gs and %ch,%fs:0x6e(%ecx)
- 17c:	74 00                	je     17e <PR_BOOTABLE+0xfe>
- 17e:	75 69                	jne    1e9 <PR_BOOTABLE+0x169>
- 180:	6e                   	outsb  %ds:(%esi),(%dx)
- 181:	74 33                	je     1b6 <PR_BOOTABLE+0x136>
- 183:	32 5f 74             	xor    0x74(%edi),%bl
- 186:	00 69 74             	add    %ch,0x74(%ecx)
- 189:	6f                   	outsl  %ds:(%esi),(%dx)
- 18a:	78 00                	js     18c <PR_BOOTABLE+0x10c>
- 18c:	70 75                	jo     203 <PR_BOOTABLE+0x183>
- 18e:	74 73                	je     203 <PR_BOOTABLE+0x183>
- 190:	00 73 68             	add    %dh,0x68(%ebx)
- 193:	6f                   	outsl  %ds:(%esi),(%dx)
- 194:	72 74                	jb     20a <PR_BOOTABLE+0x18a>
- 196:	20 75 6e             	and    %dh,0x6e(%ebp)
- 199:	73 69                	jae    204 <PR_BOOTABLE+0x184>
- 19b:	67 6e                	outsb  %ds:(%si),(%dx)
- 19d:	65 64 20 69 6e       	gs and %ch,%fs:0x6e(%ecx)
- 1a2:	74 00                	je     1a4 <PR_BOOTABLE+0x124>
- 1a4:	73 74                	jae    21a <PR_BOOTABLE+0x19a>
- 1a6:	72 6c                	jb     214 <PR_BOOTABLE+0x194>
- 1a8:	65 6e                	outsb  %gs:(%esi),(%dx)
- 1aa:	00 64 61 74          	add    %ah,0x74(%ecx,%eiz,2)
- 1ae:	61                   	popa   
- 1af:	00 70 6f             	add    %dh,0x6f(%eax)
- 1b2:	72 74                	jb     228 <PR_BOOTABLE+0x1a8>
- 1b4:	00 73 69             	add    %dh,0x69(%ebx)
- 1b7:	67 6e                	outsb  %ds:(%si),(%dx)
- 1b9:	00 72 65             	add    %dh,0x65(%edx)
- 1bc:	76 65                	jbe    223 <PR_BOOTABLE+0x1a3>
- 1be:	72 73                	jb     233 <PR_BOOTABLE+0x1b3>
- 1c0:	65 00 70 75          	add    %dh,%gs:0x75(%eax)
- 1c4:	74 69                	je     22f <PR_BOOTABLE+0x1af>
- 1c6:	5f                   	pop    %edi
- 1c7:	73 74                	jae    23d <PR_BOOTABLE+0x1bd>
- 1c9:	72 00                	jb     1cb <PR_BOOTABLE+0x14b>
- 1cb:	62 6c 61 6e          	bound  %ebp,0x6e(%ecx,%eiz,2)
- 1cf:	6b 00 72             	imul   $0x72,(%eax),%eax
- 1d2:	6f                   	outsl  %ds:(%esi),(%dx)
- 1d3:	6f                   	outsl  %ds:(%esi),(%dx)
- 1d4:	74 00                	je     1d6 <PR_BOOTABLE+0x156>
- 1d6:	76 69                	jbe    241 <PR_BOOTABLE+0x1c1>
- 1d8:	64 65 6f             	fs outsl %gs:(%esi),(%dx)
- 1db:	00 64 69 73          	add    %ah,0x73(%ecx,%ebp,2)
- 1df:	6b 5f 73 69          	imul   $0x69,0x73(%edi),%ebx
- 1e3:	67 00 65 6c          	add    %ah,0x6c(%di)
- 1e7:	66 68 64 66          	pushw  $0x6664
- 1eb:	00 65 5f             	add    %ah,0x5f(%ebp)
- 1ee:	73 68                	jae    258 <PR_BOOTABLE+0x1d8>
- 1f0:	73 74                	jae    266 <PR_BOOTABLE+0x1e6>
- 1f2:	72 6e                	jb     262 <PR_BOOTABLE+0x1e2>
- 1f4:	64 78 00             	fs js  1f7 <PR_BOOTABLE+0x177>
- 1f7:	6d                   	insl   (%dx),%es:(%edi)
- 1f8:	6d                   	insl   (%dx),%es:(%edi)
- 1f9:	61                   	popa   
- 1fa:	70 5f                	jo     25b <PR_BOOTABLE+0x1db>
- 1fc:	61                   	popa   
- 1fd:	64 64 72 00          	fs fs jb 201 <PR_BOOTABLE+0x181>
- 201:	65 6c                	gs insb (%dx),%es:(%edi)
- 203:	66 68 64 72          	pushw  $0x7264
- 207:	00 76 62             	add    %dh,0x62(%esi)
- 20a:	65 5f                	gs pop %edi
- 20c:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
- 213:	63 65 5f             	arpl   %sp,0x5f(%ebp)
- 216:	6f                   	outsl  %ds:(%esi),(%dx)
- 217:	66 66 00 65 5f       	data16 data16 add %ah,0x5f(%ebp)
- 21c:	65 6e                	outsb  %gs:(%esi),(%dx)
- 21e:	74 72                	je     292 <PR_BOOTABLE+0x212>
- 220:	79 00                	jns    222 <PR_BOOTABLE+0x1a2>
- 222:	75 69                	jne    28d <PR_BOOTABLE+0x20d>
- 224:	6e                   	outsb  %ds:(%esi),(%dx)
- 225:	74 36                	je     25d <PR_BOOTABLE+0x1dd>
- 227:	34 5f                	xor    $0x5f,%al
- 229:	74 00                	je     22b <PR_BOOTABLE+0x1ab>
- 22b:	6c                   	insb   (%dx),%es:(%edi)
- 22c:	6f                   	outsl  %ds:(%esi),(%dx)
- 22d:	61                   	popa   
- 22e:	64 5f                	fs pop %edi
- 230:	6b 65 72 6e          	imul   $0x6e,0x72(%ebp),%esp
- 234:	65 6c                	gs insb (%dx),%es:(%edi)
- 236:	00 70 5f             	add    %dh,0x5f(%eax)
- 239:	6d                   	insl   (%dx),%es:(%edi)
- 23a:	65 6d                	gs insl (%dx),%es:(%edi)
- 23c:	73 7a                	jae    2b8 <PR_BOOTABLE+0x238>
- 23e:	00 70 5f             	add    %dh,0x5f(%eax)
- 241:	6f                   	outsl  %ds:(%esi),(%dx)
- 242:	66 66 73 65          	data16 data16 jae 2ab <PR_BOOTABLE+0x22b>
- 246:	74 00                	je     248 <PR_BOOTABLE+0x1c8>
- 248:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 24b:	74 6c                	je     2b9 <PR_BOOTABLE+0x239>
- 24d:	6f                   	outsl  %ds:(%esi),(%dx)
- 24e:	61                   	popa   
- 24f:	64 65 72 00          	fs gs jb 253 <PR_BOOTABLE+0x1d3>
- 253:	65 5f                	gs pop %edi
- 255:	66 6c                	data16 insb (%dx),%es:(%edi)
- 257:	61                   	popa   
- 258:	67 73 00             	addr16 jae 25b <PR_BOOTABLE+0x1db>
- 25b:	63 6d 64             	arpl   %bp,0x64(%ebp)
- 25e:	6c                   	insb   (%dx),%es:(%edi)
- 25f:	69 6e 65 00 65 5f 6d 	imul   $0x6d5f6500,0x65(%esi),%ebp
- 266:	61                   	popa   
- 267:	63 68 69             	arpl   %bp,0x69(%eax)
- 26a:	6e                   	outsb  %ds:(%esi),(%dx)
- 26b:	65 00 65 5f          	add    %ah,%gs:0x5f(%ebp)
- 26f:	70 68                	jo     2d9 <PR_BOOTABLE+0x259>
- 271:	65 6e                	outsb  %gs:(%esi),(%dx)
- 273:	74 73                	je     2e8 <PR_BOOTABLE+0x268>
- 275:	69 7a 65 00 65 78 65 	imul   $0x65786500,0x65(%edx),%edi
- 27c:	63 5f 6b             	arpl   %bx,0x6b(%edi)
- 27f:	65 72 6e             	gs jb  2f0 <PR_BOOTABLE+0x270>
- 282:	65 6c                	gs insb (%dx),%es:(%edi)
- 284:	00 6d 6f             	add    %ch,0x6f(%ebp)
- 287:	64 73 5f             	fs jae 2e9 <PR_BOOTABLE+0x269>
- 28a:	61                   	popa   
- 28b:	64 64 72 00          	fs fs jb 28f <PR_BOOTABLE+0x20f>
- 28f:	61                   	popa   
- 290:	6f                   	outsl  %ds:(%esi),(%dx)
- 291:	75 74                	jne    307 <PR_BOOTABLE+0x287>
- 293:	00 73 74             	add    %dh,0x74(%ebx)
- 296:	72 73                	jb     30b <PR_BOOTABLE+0x28b>
- 298:	69 7a 65 00 70 61 72 	imul   $0x72617000,0x65(%edx),%edi
- 29f:	74 33                	je     2d4 <PR_BOOTABLE+0x254>
- 2a1:	00 70 5f             	add    %dh,0x5f(%eax)
- 2a4:	74 79                	je     31f <PR_BOOTABLE+0x29f>
- 2a6:	70 65                	jo     30d <PR_BOOTABLE+0x28d>
- 2a8:	00 70 72             	add    %dh,0x72(%eax)
- 2ab:	6f                   	outsl  %ds:(%esi),(%dx)
- 2ac:	67 68 64 72 00 65    	addr16 push $0x65007264
- 2b2:	5f                   	pop    %edi
- 2b3:	73 68                	jae    31d <PR_BOOTABLE+0x29d>
- 2b5:	65 6e                	outsb  %gs:(%esi),(%dx)
- 2b7:	74 73                	je     32c <PR_BOOTABLE+0x2ac>
- 2b9:	69 7a 65 00 73 68 6e 	imul   $0x6e687300,0x65(%edx),%edi
- 2c0:	64 78 00             	fs js  2c3 <PR_BOOTABLE+0x243>
- 2c3:	6d                   	insl   (%dx),%es:(%edi)
- 2c4:	62 72 5f             	bound  %esi,0x5f(%edx)
- 2c7:	74 00                	je     2c9 <PR_BOOTABLE+0x249>
- 2c9:	65 5f                	gs pop %edi
- 2cb:	74 79                	je     346 <PR_BOOTABLE+0x2c6>
- 2cd:	70 65                	jo     334 <PR_BOOTABLE+0x2b4>
- 2cf:	00 64 72 69          	add    %ah,0x69(%edx,%esi,2)
- 2d3:	76 65                	jbe    33a <PR_BOOTABLE+0x2ba>
- 2d5:	73 5f                	jae    336 <PR_BOOTABLE+0x2b6>
- 2d7:	61                   	popa   
- 2d8:	64 64 72 00          	fs fs jb 2dc <PR_BOOTABLE+0x25c>
- 2dc:	65 5f                	gs pop %edi
- 2de:	65 68 73 69 7a 65    	gs push $0x657a6973
- 2e4:	00 70 61             	add    %dh,0x61(%eax)
- 2e7:	72 74                	jb     35d <PR_BOOTABLE+0x2dd>
- 2e9:	69 74 69 6f 6e 00 62 	imul   $0x6962006e,0x6f(%ecx,%ebp,2),%esi
- 2f0:	69 
- 2f1:	6f                   	outsl  %ds:(%esi),(%dx)
- 2f2:	73 5f                	jae    353 <PR_BOOTABLE+0x2d3>
- 2f4:	73 6d                	jae    363 <PR_BOOTABLE+0x2e3>
- 2f6:	61                   	popa   
- 2f7:	70 5f                	jo     358 <PR_BOOTABLE+0x2d8>
- 2f9:	74 00                	je     2fb <PR_BOOTABLE+0x27b>
- 2fb:	6d                   	insl   (%dx),%es:(%edi)
- 2fc:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 2ff:	74 5f                	je     360 <PR_BOOTABLE+0x2e0>
- 301:	69 6e 66 6f 5f 74 00 	imul   $0x745f6f,0x66(%esi),%ebp
- 308:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 30b:	74 61                	je     36e <PR_BOOTABLE+0x2ee>
- 30d:	62 6c 65 5f          	bound  %ebp,0x5f(%ebp,%eiz,2)
- 311:	6c                   	insb   (%dx),%es:(%edi)
- 312:	62 61 00             	bound  %esp,0x0(%ecx)
- 315:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 318:	74 31                	je     34b <PR_BOOTABLE+0x2cb>
- 31a:	6d                   	insl   (%dx),%es:(%edi)
- 31b:	61                   	popa   
- 31c:	69 6e 00 65 5f 76 65 	imul   $0x65765f65,0x0(%esi),%ebp
- 323:	72 73                	jb     398 <PR_BOOTABLE+0x318>
- 325:	69 6f 6e 00 70 61 72 	imul   $0x72617000,0x6e(%edi),%ebp
+  1f:	4f                   	dec    %edi
+  20:	53                   	push   %ebx
+  21:	5f                   	pop    %edi
+  22:	4c                   	dec    %esp
+  23:	61                   	popa   
+  24:	62 73 5f             	bound  %esi,0x5f(%ebx)
+  27:	46                   	inc    %esi
+  28:	69 6e 61 6c 2f 6c 61 	imul   $0x616c2f6c,0x61(%esi),%ebp
+  2f:	62 32                	bound  %esi,(%edx)
+  31:	5f                   	pop    %edi
+  32:	73 6f                	jae    a3 <PR_BOOTABLE+0x23>
+  34:	6c                   	insb   (%dx),%es:(%edi)
+  35:	75 74                	jne    ab <PR_BOOTABLE+0x2b>
+  37:	69 6f 6e 2f 6c 61 62 	imul   $0x62616c2f,0x6e(%edi),%ebp
+  3e:	32 2f                	xor    (%edi),%ch
+  40:	6d                   	insl   (%dx),%es:(%edi)
+  41:	63 65 72             	arpl   %sp,0x72(%ebp)
+  44:	74 69                	je     af <PR_BOOTABLE+0x2f>
+  46:	6b 6f 73 00          	imul   $0x0,0x73(%edi),%ebp
+  4a:	47                   	inc    %edi
+  4b:	4e                   	dec    %esi
+  4c:	55                   	push   %ebp
+  4d:	20 41 53             	and    %al,0x53(%ecx)
+  50:	20 32                	and    %dh,(%edx)
+  52:	2e 33 38             	xor    %cs:(%eax),%edi
+  55:	00 65 6e             	add    %ah,0x6e(%ebp)
+  58:	64 5f                	fs pop %edi
+  5a:	76 61                	jbe    bd <PR_BOOTABLE+0x3d>
+  5c:	00 77 61             	add    %dh,0x61(%edi)
+  5f:	69 74 64 69 73 6b 00 	imul   $0x70006b73,0x69(%esp,%eiz,2),%esi
+  66:	70 
+  67:	75 74                	jne    dd <PR_BOOTABLE+0x5d>
+  69:	6c                   	insb   (%dx),%es:(%edi)
+  6a:	69 6e 65 00 73 68 6f 	imul   $0x6f687300,0x65(%esi),%ebp
+  71:	72 74                	jb     e7 <PR_BOOTABLE+0x67>
+  73:	20 69 6e             	and    %ch,0x6e(%ecx)
+  76:	74 00                	je     78 <PROT_MODE_DSEG+0x68>
+  78:	63 6f 6c             	arpl   %bp,0x6c(%edi)
+  7b:	6f                   	outsl  %ds:(%esi),(%dx)
+  7c:	72 00                	jb     7e <PROT_MODE_DSEG+0x6e>
+  7e:	72 6f                	jb     ef <PR_BOOTABLE+0x6f>
+  80:	6c                   	insb   (%dx),%es:(%edi)
+  81:	6c                   	insb   (%dx),%es:(%edi)
+  82:	00 73 74             	add    %dh,0x74(%ebx)
+  85:	72 69                	jb     f0 <PR_BOOTABLE+0x70>
+  87:	6e                   	outsb  %ds:(%esi),(%dx)
+  88:	67 00 70 61          	add    %dh,0x61(%bx,%si)
+  8c:	6e                   	outsb  %ds:(%esi),(%dx)
+  8d:	69 63 00 70 75 74 69 	imul   $0x69747570,0x0(%ebx),%esp
+  94:	00 72 65             	add    %dh,0x65(%edx)
+  97:	61                   	popa   
+  98:	64 73 65             	fs jae 100 <PR_BOOTABLE+0x80>
+  9b:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
+  9f:	00 75 69             	add    %dh,0x69(%ebp)
+  a2:	6e                   	outsb  %ds:(%esi),(%dx)
+  a3:	74 38                	je     dd <PR_BOOTABLE+0x5d>
+  a5:	5f                   	pop    %edi
+  a6:	74 00                	je     a8 <PR_BOOTABLE+0x28>
+  a8:	6f                   	outsl  %ds:(%esi),(%dx)
+  a9:	75 74                	jne    11f <PR_BOOTABLE+0x9f>
+  ab:	62 00                	bound  %eax,(%eax)
+  ad:	69 6e 73 6c 00 6c 6f 	imul   $0x6f6c006c,0x73(%esi),%ebp
+  b4:	6e                   	outsb  %ds:(%esi),(%dx)
+  b5:	67 20 6c 6f          	and    %ch,0x6f(%si)
+  b9:	6e                   	outsb  %ds:(%esi),(%dx)
+  ba:	67 20 69 6e          	and    %ch,0x6e(%bx,%di)
+  be:	74 00                	je     c0 <PR_BOOTABLE+0x40>
+  c0:	47                   	inc    %edi
+  c1:	4e                   	dec    %esi
+  c2:	55                   	push   %ebp
+  c3:	20 43 31             	and    %al,0x31(%ebx)
+  c6:	37                   	aaa    
+  c7:	20 31                	and    %dh,(%ecx)
+  c9:	31 2e                	xor    %ebp,(%esi)
+  cb:	34 2e                	xor    $0x2e,%al
+  cd:	30 20                	xor    %ah,(%eax)
+  cf:	2d 6d 33 32 20       	sub    $0x2032336d,%eax
+  d4:	2d 6d 74 75 6e       	sub    $0x6e75746d,%eax
+  d9:	65 3d 67 65 6e 65    	gs cmp $0x656e6567,%eax
+  df:	72 69                	jb     14a <PR_BOOTABLE+0xca>
+  e1:	63 20                	arpl   %sp,(%eax)
+  e3:	2d 6d 61 72 63       	sub    $0x6372616d,%eax
+  e8:	68 3d 69 36 38       	push   $0x3836693d
+  ed:	36 20 2d 67 20 2d 4f 	and    %ch,%ss:0x4f2d2067
+  f4:	73 20                	jae    116 <PR_BOOTABLE+0x96>
+  f6:	2d 4f 73 20 2d       	sub    $0x2d20734f,%eax
+  fb:	66 6e                	data16 outsb %ds:(%esi),(%dx)
+  fd:	6f                   	outsl  %ds:(%esi),(%dx)
+  fe:	2d 62 75 69 6c       	sub    $0x6c697562,%eax
+ 103:	74 69                	je     16e <PR_BOOTABLE+0xee>
+ 105:	6e                   	outsb  %ds:(%esi),(%dx)
+ 106:	20 2d 66 6e 6f 2d    	and    %ch,0x2d6f6e66
+ 10c:	73 74                	jae    182 <PR_BOOTABLE+0x102>
+ 10e:	61                   	popa   
+ 10f:	63 6b 2d             	arpl   %bp,0x2d(%ebx)
+ 112:	70 72                	jo     186 <PR_BOOTABLE+0x106>
+ 114:	6f                   	outsl  %ds:(%esi),(%dx)
+ 115:	74 65                	je     17c <PR_BOOTABLE+0xfc>
+ 117:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
+ 11b:	20 2d 66 61 73 79    	and    %ch,0x79736166
+ 121:	6e                   	outsb  %ds:(%esi),(%dx)
+ 122:	63 68 72             	arpl   %bp,0x72(%eax)
+ 125:	6f                   	outsl  %ds:(%esi),(%dx)
+ 126:	6e                   	outsb  %ds:(%esi),(%dx)
+ 127:	6f                   	outsl  %ds:(%esi),(%dx)
+ 128:	75 73                	jne    19d <PR_BOOTABLE+0x11d>
+ 12a:	2d 75 6e 77 69       	sub    $0x69776e75,%eax
+ 12f:	6e                   	outsb  %ds:(%esi),(%dx)
+ 130:	64 2d 74 61 62 6c    	fs sub $0x6c626174,%eax
+ 136:	65 73 20             	gs jae 159 <PR_BOOTABLE+0xd9>
+ 139:	2d 66 73 74 61       	sub    $0x61747366,%eax
+ 13e:	63 6b 2d             	arpl   %bp,0x2d(%ebx)
+ 141:	63 6c 61 73          	arpl   %bp,0x73(%ecx,%eiz,2)
+ 145:	68 2d 70 72 6f       	push   $0x6f72702d
+ 14a:	74 65                	je     1b1 <PR_BOOTABLE+0x131>
+ 14c:	63 74 69 6f          	arpl   %si,0x6f(%ecx,%ebp,2)
+ 150:	6e                   	outsb  %ds:(%esi),(%dx)
+ 151:	00 72 65             	add    %dh,0x65(%edx)
+ 154:	61                   	popa   
+ 155:	64 73 65             	fs jae 1bd <PR_BOOTABLE+0x13d>
+ 158:	63 74 69 6f          	arpl   %si,0x6f(%ecx,%ebp,2)
+ 15c:	6e                   	outsb  %ds:(%esi),(%dx)
+ 15d:	00 69 74             	add    %ch,0x74(%ecx)
+ 160:	6f                   	outsl  %ds:(%esi),(%dx)
+ 161:	61                   	popa   
+ 162:	00 75 6e             	add    %dh,0x6e(%ebp)
+ 165:	73 69                	jae    1d0 <PR_BOOTABLE+0x150>
+ 167:	67 6e                	outsb  %ds:(%si),(%dx)
+ 169:	65 64 20 63 68       	gs and %ah,%fs:0x68(%ebx)
+ 16e:	61                   	popa   
+ 16f:	72 00                	jb     171 <PR_BOOTABLE+0xf1>
+ 171:	69 74 6f 68 00 70 75 	imul   $0x74757000,0x68(%edi,%ebp,2),%esi
+ 178:	74 
+ 179:	63 00                	arpl   %ax,(%eax)
+ 17b:	6c                   	insb   (%dx),%es:(%edi)
+ 17c:	6f                   	outsl  %ds:(%esi),(%dx)
+ 17d:	6e                   	outsb  %ds:(%esi),(%dx)
+ 17e:	67 20 6c 6f          	and    %ch,0x6f(%si)
+ 182:	6e                   	outsb  %ds:(%esi),(%dx)
+ 183:	67 20 75 6e          	and    %dh,0x6e(%di)
+ 187:	73 69                	jae    1f2 <PR_BOOTABLE+0x172>
+ 189:	67 6e                	outsb  %ds:(%si),(%dx)
+ 18b:	65 64 20 69 6e       	gs and %ch,%fs:0x6e(%ecx)
+ 190:	74 00                	je     192 <PR_BOOTABLE+0x112>
+ 192:	75 69                	jne    1fd <PR_BOOTABLE+0x17d>
+ 194:	6e                   	outsb  %ds:(%esi),(%dx)
+ 195:	74 33                	je     1ca <PR_BOOTABLE+0x14a>
+ 197:	32 5f 74             	xor    0x74(%edi),%bl
+ 19a:	00 69 74             	add    %ch,0x74(%ecx)
+ 19d:	6f                   	outsl  %ds:(%esi),(%dx)
+ 19e:	78 00                	js     1a0 <PR_BOOTABLE+0x120>
+ 1a0:	70 75                	jo     217 <PR_BOOTABLE+0x197>
+ 1a2:	74 73                	je     217 <PR_BOOTABLE+0x197>
+ 1a4:	00 73 68             	add    %dh,0x68(%ebx)
+ 1a7:	6f                   	outsl  %ds:(%esi),(%dx)
+ 1a8:	72 74                	jb     21e <PR_BOOTABLE+0x19e>
+ 1aa:	20 75 6e             	and    %dh,0x6e(%ebp)
+ 1ad:	73 69                	jae    218 <PR_BOOTABLE+0x198>
+ 1af:	67 6e                	outsb  %ds:(%si),(%dx)
+ 1b1:	65 64 20 69 6e       	gs and %ch,%fs:0x6e(%ecx)
+ 1b6:	74 00                	je     1b8 <PR_BOOTABLE+0x138>
+ 1b8:	73 74                	jae    22e <PR_BOOTABLE+0x1ae>
+ 1ba:	72 6c                	jb     228 <PR_BOOTABLE+0x1a8>
+ 1bc:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 1be:	00 64 61 74          	add    %ah,0x74(%ecx,%eiz,2)
+ 1c2:	61                   	popa   
+ 1c3:	00 70 6f             	add    %dh,0x6f(%eax)
+ 1c6:	72 74                	jb     23c <PR_BOOTABLE+0x1bc>
+ 1c8:	00 73 69             	add    %dh,0x69(%ebx)
+ 1cb:	67 6e                	outsb  %ds:(%si),(%dx)
+ 1cd:	00 72 65             	add    %dh,0x65(%edx)
+ 1d0:	76 65                	jbe    237 <PR_BOOTABLE+0x1b7>
+ 1d2:	72 73                	jb     247 <PR_BOOTABLE+0x1c7>
+ 1d4:	65 00 70 75          	add    %dh,%gs:0x75(%eax)
+ 1d8:	74 69                	je     243 <PR_BOOTABLE+0x1c3>
+ 1da:	5f                   	pop    %edi
+ 1db:	73 74                	jae    251 <PR_BOOTABLE+0x1d1>
+ 1dd:	72 00                	jb     1df <PR_BOOTABLE+0x15f>
+ 1df:	62 6c 61 6e          	bound  %ebp,0x6e(%ecx,%eiz,2)
+ 1e3:	6b 00 72             	imul   $0x72,(%eax),%eax
+ 1e6:	6f                   	outsl  %ds:(%esi),(%dx)
+ 1e7:	6f                   	outsl  %ds:(%esi),(%dx)
+ 1e8:	74 00                	je     1ea <PR_BOOTABLE+0x16a>
+ 1ea:	76 69                	jbe    255 <PR_BOOTABLE+0x1d5>
+ 1ec:	64 65 6f             	fs outsl %gs:(%esi),(%dx)
+ 1ef:	00 64 69 73          	add    %ah,0x73(%ecx,%ebp,2)
+ 1f3:	6b 5f 73 69          	imul   $0x69,0x73(%edi),%ebx
+ 1f7:	67 00 65 6c          	add    %ah,0x6c(%di)
+ 1fb:	66 68 64 66          	pushw  $0x6664
+ 1ff:	00 65 5f             	add    %ah,0x5f(%ebp)
+ 202:	73 68                	jae    26c <PR_BOOTABLE+0x1ec>
+ 204:	73 74                	jae    27a <PR_BOOTABLE+0x1fa>
+ 206:	72 6e                	jb     276 <PR_BOOTABLE+0x1f6>
+ 208:	64 78 00             	fs js  20b <PR_BOOTABLE+0x18b>
+ 20b:	6d                   	insl   (%dx),%es:(%edi)
+ 20c:	6d                   	insl   (%dx),%es:(%edi)
+ 20d:	61                   	popa   
+ 20e:	70 5f                	jo     26f <PR_BOOTABLE+0x1ef>
+ 210:	61                   	popa   
+ 211:	64 64 72 00          	fs fs jb 215 <PR_BOOTABLE+0x195>
+ 215:	65 6c                	gs insb (%dx),%es:(%edi)
+ 217:	66 68 64 72          	pushw  $0x7264
+ 21b:	00 76 62             	add    %dh,0x62(%esi)
+ 21e:	65 5f                	gs pop %edi
+ 220:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
+ 227:	63 65 5f             	arpl   %sp,0x5f(%ebp)
+ 22a:	6f                   	outsl  %ds:(%esi),(%dx)
+ 22b:	66 66 00 65 5f       	data16 data16 add %ah,0x5f(%ebp)
+ 230:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 232:	74 72                	je     2a6 <PR_BOOTABLE+0x226>
+ 234:	79 00                	jns    236 <PR_BOOTABLE+0x1b6>
+ 236:	75 69                	jne    2a1 <PR_BOOTABLE+0x221>
+ 238:	6e                   	outsb  %ds:(%esi),(%dx)
+ 239:	74 36                	je     271 <PR_BOOTABLE+0x1f1>
+ 23b:	34 5f                	xor    $0x5f,%al
+ 23d:	74 00                	je     23f <PR_BOOTABLE+0x1bf>
+ 23f:	6c                   	insb   (%dx),%es:(%edi)
+ 240:	6f                   	outsl  %ds:(%esi),(%dx)
+ 241:	61                   	popa   
+ 242:	64 5f                	fs pop %edi
+ 244:	6b 65 72 6e          	imul   $0x6e,0x72(%ebp),%esp
+ 248:	65 6c                	gs insb (%dx),%es:(%edi)
+ 24a:	00 70 5f             	add    %dh,0x5f(%eax)
+ 24d:	6d                   	insl   (%dx),%es:(%edi)
+ 24e:	65 6d                	gs insl (%dx),%es:(%edi)
+ 250:	73 7a                	jae    2cc <PR_BOOTABLE+0x24c>
+ 252:	00 70 5f             	add    %dh,0x5f(%eax)
+ 255:	6f                   	outsl  %ds:(%esi),(%dx)
+ 256:	66 66 73 65          	data16 data16 jae 2bf <PR_BOOTABLE+0x23f>
+ 25a:	74 00                	je     25c <PR_BOOTABLE+0x1dc>
+ 25c:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 25f:	74 6c                	je     2cd <PR_BOOTABLE+0x24d>
+ 261:	6f                   	outsl  %ds:(%esi),(%dx)
+ 262:	61                   	popa   
+ 263:	64 65 72 00          	fs gs jb 267 <PR_BOOTABLE+0x1e7>
+ 267:	65 5f                	gs pop %edi
+ 269:	66 6c                	data16 insb (%dx),%es:(%edi)
+ 26b:	61                   	popa   
+ 26c:	67 73 00             	addr16 jae 26f <PR_BOOTABLE+0x1ef>
+ 26f:	63 6d 64             	arpl   %bp,0x64(%ebp)
+ 272:	6c                   	insb   (%dx),%es:(%edi)
+ 273:	69 6e 65 00 65 5f 6d 	imul   $0x6d5f6500,0x65(%esi),%ebp
+ 27a:	61                   	popa   
+ 27b:	63 68 69             	arpl   %bp,0x69(%eax)
+ 27e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 27f:	65 00 65 5f          	add    %ah,%gs:0x5f(%ebp)
+ 283:	70 68                	jo     2ed <PR_BOOTABLE+0x26d>
+ 285:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 287:	74 73                	je     2fc <PR_BOOTABLE+0x27c>
+ 289:	69 7a 65 00 65 78 65 	imul   $0x65786500,0x65(%edx),%edi
+ 290:	63 5f 6b             	arpl   %bx,0x6b(%edi)
+ 293:	65 72 6e             	gs jb  304 <PR_BOOTABLE+0x284>
+ 296:	65 6c                	gs insb (%dx),%es:(%edi)
+ 298:	00 6d 6f             	add    %ch,0x6f(%ebp)
+ 29b:	64 73 5f             	fs jae 2fd <PR_BOOTABLE+0x27d>
+ 29e:	61                   	popa   
+ 29f:	64 64 72 00          	fs fs jb 2a3 <PR_BOOTABLE+0x223>
+ 2a3:	61                   	popa   
+ 2a4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 2a5:	75 74                	jne    31b <PR_BOOTABLE+0x29b>
+ 2a7:	00 73 74             	add    %dh,0x74(%ebx)
+ 2aa:	72 73                	jb     31f <PR_BOOTABLE+0x29f>
+ 2ac:	69 7a 65 00 70 61 72 	imul   $0x72617000,0x65(%edx),%edi
+ 2b3:	74 33                	je     2e8 <PR_BOOTABLE+0x268>
+ 2b5:	00 70 5f             	add    %dh,0x5f(%eax)
+ 2b8:	74 79                	je     333 <PR_BOOTABLE+0x2b3>
+ 2ba:	70 65                	jo     321 <PR_BOOTABLE+0x2a1>
+ 2bc:	00 70 72             	add    %dh,0x72(%eax)
+ 2bf:	6f                   	outsl  %ds:(%esi),(%dx)
+ 2c0:	67 68 64 72 00 65    	addr16 push $0x65007264
+ 2c6:	5f                   	pop    %edi
+ 2c7:	73 68                	jae    331 <PR_BOOTABLE+0x2b1>
+ 2c9:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 2cb:	74 73                	je     340 <PR_BOOTABLE+0x2c0>
+ 2cd:	69 7a 65 00 73 68 6e 	imul   $0x6e687300,0x65(%edx),%edi
+ 2d4:	64 78 00             	fs js  2d7 <PR_BOOTABLE+0x257>
+ 2d7:	6d                   	insl   (%dx),%es:(%edi)
+ 2d8:	62 72 5f             	bound  %esi,0x5f(%edx)
+ 2db:	74 00                	je     2dd <PR_BOOTABLE+0x25d>
+ 2dd:	65 5f                	gs pop %edi
+ 2df:	74 79                	je     35a <PR_BOOTABLE+0x2da>
+ 2e1:	70 65                	jo     348 <PR_BOOTABLE+0x2c8>
+ 2e3:	00 64 72 69          	add    %ah,0x69(%edx,%esi,2)
+ 2e7:	76 65                	jbe    34e <PR_BOOTABLE+0x2ce>
+ 2e9:	73 5f                	jae    34a <PR_BOOTABLE+0x2ca>
+ 2eb:	61                   	popa   
+ 2ec:	64 64 72 00          	fs fs jb 2f0 <PR_BOOTABLE+0x270>
+ 2f0:	65 5f                	gs pop %edi
+ 2f2:	65 68 73 69 7a 65    	gs push $0x657a6973
+ 2f8:	00 70 61             	add    %dh,0x61(%eax)
+ 2fb:	72 74                	jb     371 <PR_BOOTABLE+0x2f1>
+ 2fd:	69 74 69 6f 6e 00 62 	imul   $0x6962006e,0x6f(%ecx,%ebp,2),%esi
+ 304:	69 
+ 305:	6f                   	outsl  %ds:(%esi),(%dx)
+ 306:	73 5f                	jae    367 <PR_BOOTABLE+0x2e7>
+ 308:	73 6d                	jae    377 <PR_BOOTABLE+0x2f7>
+ 30a:	61                   	popa   
+ 30b:	70 5f                	jo     36c <PR_BOOTABLE+0x2ec>
+ 30d:	74 00                	je     30f <PR_BOOTABLE+0x28f>
+ 30f:	6d                   	insl   (%dx),%es:(%edi)
+ 310:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 313:	74 5f                	je     374 <PR_BOOTABLE+0x2f4>
+ 315:	69 6e 66 6f 5f 74 00 	imul   $0x745f6f,0x66(%esi),%ebp
+ 31c:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 31f:	74 61                	je     382 <PR_BOOTABLE+0x302>
+ 321:	62 6c 65 5f          	bound  %ebp,0x5f(%ebp,%eiz,2)
+ 325:	6c                   	insb   (%dx),%es:(%edi)
+ 326:	62 61 00             	bound  %esp,0x0(%ecx)
+ 329:	62 6f 6f             	bound  %ebp,0x6f(%edi)
  32c:	74 31                	je     35f <PR_BOOTABLE+0x2df>
- 32e:	00 70 61             	add    %dh,0x61(%eax)
- 331:	72 74                	jb     3a7 <PR_BOOTABLE+0x327>
- 333:	32 00                	xor    (%eax),%al
- 335:	64 72 69             	fs jb  3a1 <PR_BOOTABLE+0x321>
- 338:	76 65                	jbe    39f <PR_BOOTABLE+0x31f>
- 33a:	72 00                	jb     33c <PR_BOOTABLE+0x2bc>
- 33c:	66 69 72 73 74 5f    	imul   $0x5f74,0x73(%edx),%si
- 342:	63 68 73             	arpl   %bp,0x73(%eax)
- 345:	00 62 69             	add    %ah,0x69(%edx)
- 348:	6f                   	outsl  %ds:(%esi),(%dx)
- 349:	73 5f                	jae    3aa <PR_BOOTABLE+0x32a>
- 34b:	73 6d                	jae    3ba <PR_BOOTABLE+0x33a>
- 34d:	61                   	popa   
- 34e:	70 00                	jo     350 <PR_BOOTABLE+0x2d0>
- 350:	6d                   	insl   (%dx),%es:(%edi)
- 351:	65 6d                	gs insl (%dx),%es:(%edi)
- 353:	5f                   	pop    %edi
- 354:	6c                   	insb   (%dx),%es:(%edi)
- 355:	6f                   	outsl  %ds:(%esi),(%dx)
- 356:	77 65                	ja     3bd <PR_BOOTABLE+0x33d>
- 358:	72 00                	jb     35a <PR_BOOTABLE+0x2da>
- 35a:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 35d:	74 61                	je     3c0 <PR_BOOTABLE+0x340>
- 35f:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
- 363:	73 79                	jae    3de <PR_BOOTABLE+0x35e>
- 365:	6d                   	insl   (%dx),%es:(%edi)
- 366:	73 00                	jae    368 <PR_BOOTABLE+0x2e8>
- 368:	75 69                	jne    3d3 <PR_BOOTABLE+0x353>
- 36a:	6e                   	outsb  %ds:(%esi),(%dx)
- 36b:	74 31                	je     39e <PR_BOOTABLE+0x31e>
- 36d:	36 5f                	ss pop %edi
- 36f:	74 00                	je     371 <PR_BOOTABLE+0x2f1>
- 371:	6d                   	insl   (%dx),%es:(%edi)
- 372:	6d                   	insl   (%dx),%es:(%edi)
- 373:	61                   	popa   
- 374:	70 5f                	jo     3d5 <PR_BOOTABLE+0x355>
- 376:	6c                   	insb   (%dx),%es:(%edi)
- 377:	65 6e                	outsb  %gs:(%esi),(%dx)
- 379:	67 74 68             	addr16 je 3e4 <PR_BOOTABLE+0x364>
- 37c:	00 6d 62             	add    %ch,0x62(%ebp)
- 37f:	6f                   	outsl  %ds:(%esi),(%dx)
- 380:	6f                   	outsl  %ds:(%esi),(%dx)
- 381:	74 5f                	je     3e2 <PR_BOOTABLE+0x362>
- 383:	69 6e 66 6f 00 70 5f 	imul   $0x5f70006f,0x66(%esi),%ebp
- 38a:	76 61                	jbe    3ed <PR_BOOTABLE+0x36d>
- 38c:	00 76 62             	add    %dh,0x62(%esi)
- 38f:	65 5f                	gs pop %edi
- 391:	63 6f 6e             	arpl   %bp,0x6e(%edi)
- 394:	74 72                	je     408 <PR_BOOTABLE+0x388>
- 396:	6f                   	outsl  %ds:(%esi),(%dx)
- 397:	6c                   	insb   (%dx),%es:(%edi)
- 398:	5f                   	pop    %edi
- 399:	69 6e 66 6f 00 70 5f 	imul   $0x5f70006f,0x66(%esi),%ebp
- 3a0:	66 6c                	data16 insb (%dx),%es:(%edi)
- 3a2:	61                   	popa   
- 3a3:	67 73 00             	addr16 jae 3a6 <PR_BOOTABLE+0x326>
- 3a6:	70 61                	jo     409 <PR_BOOTABLE+0x389>
- 3a8:	72 73                	jb     41d <PR_BOOTABLE+0x39d>
- 3aa:	65 5f                	gs pop %edi
- 3ac:	65 38 32             	cmp    %dh,%gs:(%edx)
- 3af:	30 00                	xor    %al,(%eax)
- 3b1:	65 5f                	gs pop %edi
- 3b3:	65 6c                	gs insb (%dx),%es:(%edi)
- 3b5:	66 00 62 6f          	data16 add %ah,0x6f(%edx)
- 3b9:	6f                   	outsl  %ds:(%esi),(%dx)
- 3ba:	74 5f                	je     41b <PR_BOOTABLE+0x39b>
- 3bc:	64 65 76 69          	fs gs jbe 429 <PR_BOOTABLE+0x3a9>
- 3c0:	63 65 00             	arpl   %sp,0x0(%ebp)
- 3c3:	64 6b 65 72 6e       	imul   $0x6e,%fs:0x72(%ebp),%esp
- 3c8:	65 6c                	gs insb (%dx),%es:(%edi)
- 3ca:	00 65 5f             	add    %ah,0x5f(%ebp)
- 3cd:	70 68                	jo     437 <PR_BOOTABLE+0x3b7>
- 3cf:	6f                   	outsl  %ds:(%esi),(%dx)
- 3d0:	66 66 00 63 6f       	data16 data16 add %ah,0x6f(%ebx)
- 3d5:	6e                   	outsb  %ds:(%esi),(%dx)
- 3d6:	66 69 67 5f 74 61    	imul   $0x6174,0x5f(%edi),%sp
- 3dc:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
- 3e0:	65 5f                	gs pop %edi
- 3e2:	6d                   	insl   (%dx),%es:(%edi)
- 3e3:	61                   	popa   
- 3e4:	67 69 63 00 6c 61 73 	imul   $0x7473616c,0x0(%bp,%di),%esp
- 3eb:	74 
- 3ec:	5f                   	pop    %edi
- 3ed:	63 68 73             	arpl   %bp,0x73(%eax)
- 3f0:	00 62 61             	add    %ah,0x61(%edx)
- 3f3:	73 65                	jae    45a <PR_BOOTABLE+0x3da>
- 3f5:	5f                   	pop    %edi
- 3f6:	61                   	popa   
- 3f7:	64 64 72 00          	fs fs jb 3fb <PR_BOOTABLE+0x37b>
- 3fb:	76 62                	jbe    45f <PR_BOOTABLE+0x3df>
- 3fd:	65 5f                	gs pop %edi
- 3ff:	6d                   	insl   (%dx),%es:(%edi)
- 400:	6f                   	outsl  %ds:(%esi),(%dx)
- 401:	64 65 00 65 5f       	fs add %ah,%gs:0x5f(%ebp)
- 406:	73 68                	jae    470 <PR_BOOTABLE+0x3f0>
- 408:	6f                   	outsl  %ds:(%esi),(%dx)
- 409:	66 66 00 6d 65       	data16 data16 add %ch,0x65(%ebp)
- 40e:	6d                   	insl   (%dx),%es:(%edi)
- 40f:	5f                   	pop    %edi
- 410:	75 70                	jne    482 <PR_BOOTABLE+0x402>
- 412:	70 65                	jo     479 <PR_BOOTABLE+0x3f9>
- 414:	72 00                	jb     416 <PR_BOOTABLE+0x396>
- 416:	76 62                	jbe    47a <PR_BOOTABLE+0x3fa>
- 418:	65 5f                	gs pop %edi
- 41a:	6d                   	insl   (%dx),%es:(%edi)
- 41b:	6f                   	outsl  %ds:(%esi),(%dx)
- 41c:	64 65 5f             	fs gs pop %edi
- 41f:	69 6e 66 6f 00 74 61 	imul   $0x6174006f,0x66(%esi),%ebp
- 426:	62 73 69             	bound  %esi,0x69(%ebx)
- 429:	7a 65                	jp     490 <PR_BOOTABLE+0x410>
- 42b:	00 66 69             	add    %ah,0x69(%esi)
- 42e:	72 73                	jb     4a3 <PR_BOOTABLE+0x423>
- 430:	74 5f                	je     491 <PR_BOOTABLE+0x411>
- 432:	6c                   	insb   (%dx),%es:(%edi)
- 433:	62 61 00             	bound  %esp,0x0(%ecx)
- 436:	64 72 69             	fs jb  4a2 <PR_BOOTABLE+0x422>
- 439:	76 65                	jbe    4a0 <PR_BOOTABLE+0x420>
- 43b:	73 5f                	jae    49c <PR_BOOTABLE+0x41c>
- 43d:	6c                   	insb   (%dx),%es:(%edi)
- 43e:	65 6e                	outsb  %gs:(%esi),(%dx)
- 440:	67 74 68             	addr16 je 4ab <PR_BOOTABLE+0x42b>
- 443:	00 70 5f             	add    %dh,0x5f(%eax)
- 446:	66 69 6c 65 73 7a 00 	imul   $0x7a,0x73(%ebp,%eiz,2),%bp
- 44d:	65 5f                	gs pop %edi
- 44f:	70 68                	jo     4b9 <PR_BOOTABLE+0x439>
- 451:	6e                   	outsb  %ds:(%esi),(%dx)
- 452:	75 6d                	jne    4c1 <PR_BOOTABLE+0x441>
- 454:	00 73 69             	add    %dh,0x69(%ebx)
- 457:	67 6e                	outsb  %ds:(%si),(%dx)
- 459:	61                   	popa   
- 45a:	74 75                	je     4d1 <PR_BOOTABLE+0x451>
- 45c:	72 65                	jb     4c3 <PR_BOOTABLE+0x443>
- 45e:	00 76 62             	add    %dh,0x62(%esi)
+ 32e:	6d                   	insl   (%dx),%es:(%edi)
+ 32f:	61                   	popa   
+ 330:	69 6e 00 65 5f 76 65 	imul   $0x65765f65,0x0(%esi),%ebp
+ 337:	72 73                	jb     3ac <PR_BOOTABLE+0x32c>
+ 339:	69 6f 6e 00 70 61 72 	imul   $0x72617000,0x6e(%edi),%ebp
+ 340:	74 31                	je     373 <PR_BOOTABLE+0x2f3>
+ 342:	00 70 61             	add    %dh,0x61(%eax)
+ 345:	72 74                	jb     3bb <PR_BOOTABLE+0x33b>
+ 347:	32 00                	xor    (%eax),%al
+ 349:	64 72 69             	fs jb  3b5 <PR_BOOTABLE+0x335>
+ 34c:	76 65                	jbe    3b3 <PR_BOOTABLE+0x333>
+ 34e:	72 00                	jb     350 <PR_BOOTABLE+0x2d0>
+ 350:	66 69 72 73 74 5f    	imul   $0x5f74,0x73(%edx),%si
+ 356:	63 68 73             	arpl   %bp,0x73(%eax)
+ 359:	00 62 69             	add    %ah,0x69(%edx)
+ 35c:	6f                   	outsl  %ds:(%esi),(%dx)
+ 35d:	73 5f                	jae    3be <PR_BOOTABLE+0x33e>
+ 35f:	73 6d                	jae    3ce <PR_BOOTABLE+0x34e>
+ 361:	61                   	popa   
+ 362:	70 00                	jo     364 <PR_BOOTABLE+0x2e4>
+ 364:	6d                   	insl   (%dx),%es:(%edi)
+ 365:	65 6d                	gs insl (%dx),%es:(%edi)
+ 367:	5f                   	pop    %edi
+ 368:	6c                   	insb   (%dx),%es:(%edi)
+ 369:	6f                   	outsl  %ds:(%esi),(%dx)
+ 36a:	77 65                	ja     3d1 <PR_BOOTABLE+0x351>
+ 36c:	72 00                	jb     36e <PR_BOOTABLE+0x2ee>
+ 36e:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 371:	74 61                	je     3d4 <PR_BOOTABLE+0x354>
+ 373:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
+ 377:	73 79                	jae    3f2 <PR_BOOTABLE+0x372>
+ 379:	6d                   	insl   (%dx),%es:(%edi)
+ 37a:	73 00                	jae    37c <PR_BOOTABLE+0x2fc>
+ 37c:	75 69                	jne    3e7 <PR_BOOTABLE+0x367>
+ 37e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 37f:	74 31                	je     3b2 <PR_BOOTABLE+0x332>
+ 381:	36 5f                	ss pop %edi
+ 383:	74 00                	je     385 <PR_BOOTABLE+0x305>
+ 385:	6d                   	insl   (%dx),%es:(%edi)
+ 386:	6d                   	insl   (%dx),%es:(%edi)
+ 387:	61                   	popa   
+ 388:	70 5f                	jo     3e9 <PR_BOOTABLE+0x369>
+ 38a:	6c                   	insb   (%dx),%es:(%edi)
+ 38b:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 38d:	67 74 68             	addr16 je 3f8 <PR_BOOTABLE+0x378>
+ 390:	00 6d 62             	add    %ch,0x62(%ebp)
+ 393:	6f                   	outsl  %ds:(%esi),(%dx)
+ 394:	6f                   	outsl  %ds:(%esi),(%dx)
+ 395:	74 5f                	je     3f6 <PR_BOOTABLE+0x376>
+ 397:	69 6e 66 6f 00 70 5f 	imul   $0x5f70006f,0x66(%esi),%ebp
+ 39e:	76 61                	jbe    401 <PR_BOOTABLE+0x381>
+ 3a0:	00 76 62             	add    %dh,0x62(%esi)
+ 3a3:	65 5f                	gs pop %edi
+ 3a5:	63 6f 6e             	arpl   %bp,0x6e(%edi)
+ 3a8:	74 72                	je     41c <PR_BOOTABLE+0x39c>
+ 3aa:	6f                   	outsl  %ds:(%esi),(%dx)
+ 3ab:	6c                   	insb   (%dx),%es:(%edi)
+ 3ac:	5f                   	pop    %edi
+ 3ad:	69 6e 66 6f 00 70 5f 	imul   $0x5f70006f,0x66(%esi),%ebp
+ 3b4:	66 6c                	data16 insb (%dx),%es:(%edi)
+ 3b6:	61                   	popa   
+ 3b7:	67 73 00             	addr16 jae 3ba <PR_BOOTABLE+0x33a>
+ 3ba:	70 61                	jo     41d <PR_BOOTABLE+0x39d>
+ 3bc:	72 73                	jb     431 <PR_BOOTABLE+0x3b1>
+ 3be:	65 5f                	gs pop %edi
+ 3c0:	65 38 32             	cmp    %dh,%gs:(%edx)
+ 3c3:	30 00                	xor    %al,(%eax)
+ 3c5:	65 5f                	gs pop %edi
+ 3c7:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3c9:	66 00 62 6f          	data16 add %ah,0x6f(%edx)
+ 3cd:	6f                   	outsl  %ds:(%esi),(%dx)
+ 3ce:	74 5f                	je     42f <PR_BOOTABLE+0x3af>
+ 3d0:	64 65 76 69          	fs gs jbe 43d <PR_BOOTABLE+0x3bd>
+ 3d4:	63 65 00             	arpl   %sp,0x0(%ebp)
+ 3d7:	64 6b 65 72 6e       	imul   $0x6e,%fs:0x72(%ebp),%esp
+ 3dc:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3de:	00 65 5f             	add    %ah,0x5f(%ebp)
+ 3e1:	70 68                	jo     44b <PR_BOOTABLE+0x3cb>
+ 3e3:	6f                   	outsl  %ds:(%esi),(%dx)
+ 3e4:	66 66 00 63 6f       	data16 data16 add %ah,0x6f(%ebx)
+ 3e9:	6e                   	outsb  %ds:(%esi),(%dx)
+ 3ea:	66 69 67 5f 74 61    	imul   $0x6174,0x5f(%edi),%sp
+ 3f0:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
+ 3f4:	65 5f                	gs pop %edi
+ 3f6:	6d                   	insl   (%dx),%es:(%edi)
+ 3f7:	61                   	popa   
+ 3f8:	67 69 63 00 6c 61 73 	imul   $0x7473616c,0x0(%bp,%di),%esp
+ 3ff:	74 
+ 400:	5f                   	pop    %edi
+ 401:	63 68 73             	arpl   %bp,0x73(%eax)
+ 404:	00 62 61             	add    %ah,0x61(%edx)
+ 407:	73 65                	jae    46e <PR_BOOTABLE+0x3ee>
+ 409:	5f                   	pop    %edi
+ 40a:	61                   	popa   
+ 40b:	64 64 72 00          	fs fs jb 40f <PR_BOOTABLE+0x38f>
+ 40f:	76 62                	jbe    473 <PR_BOOTABLE+0x3f3>
+ 411:	65 5f                	gs pop %edi
+ 413:	6d                   	insl   (%dx),%es:(%edi)
+ 414:	6f                   	outsl  %ds:(%esi),(%dx)
+ 415:	64 65 00 65 5f       	fs add %ah,%gs:0x5f(%ebp)
+ 41a:	73 68                	jae    484 <PR_BOOTABLE+0x404>
+ 41c:	6f                   	outsl  %ds:(%esi),(%dx)
+ 41d:	66 66 00 6d 65       	data16 data16 add %ch,0x65(%ebp)
+ 422:	6d                   	insl   (%dx),%es:(%edi)
+ 423:	5f                   	pop    %edi
+ 424:	75 70                	jne    496 <PR_BOOTABLE+0x416>
+ 426:	70 65                	jo     48d <PR_BOOTABLE+0x40d>
+ 428:	72 00                	jb     42a <PR_BOOTABLE+0x3aa>
+ 42a:	76 62                	jbe    48e <PR_BOOTABLE+0x40e>
+ 42c:	65 5f                	gs pop %edi
+ 42e:	6d                   	insl   (%dx),%es:(%edi)
+ 42f:	6f                   	outsl  %ds:(%esi),(%dx)
+ 430:	64 65 5f             	fs gs pop %edi
+ 433:	69 6e 66 6f 00 74 61 	imul   $0x6174006f,0x66(%esi),%ebp
+ 43a:	62 73 69             	bound  %esi,0x69(%ebx)
+ 43d:	7a 65                	jp     4a4 <PR_BOOTABLE+0x424>
+ 43f:	00 66 69             	add    %ah,0x69(%esi)
+ 442:	72 73                	jb     4b7 <PR_BOOTABLE+0x437>
+ 444:	74 5f                	je     4a5 <PR_BOOTABLE+0x425>
+ 446:	6c                   	insb   (%dx),%es:(%edi)
+ 447:	62 61 00             	bound  %esp,0x0(%ecx)
+ 44a:	64 72 69             	fs jb  4b6 <PR_BOOTABLE+0x436>
+ 44d:	76 65                	jbe    4b4 <PR_BOOTABLE+0x434>
+ 44f:	73 5f                	jae    4b0 <PR_BOOTABLE+0x430>
+ 451:	6c                   	insb   (%dx),%es:(%edi)
+ 452:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 454:	67 74 68             	addr16 je 4bf <PR_BOOTABLE+0x43f>
+ 457:	00 70 5f             	add    %dh,0x5f(%eax)
+ 45a:	66 69 6c 65 73 7a 00 	imul   $0x7a,0x73(%ebp,%eiz,2),%bp
  461:	65 5f                	gs pop %edi
- 463:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
- 46a:	63 65 5f             	arpl   %sp,0x5f(%ebp)
- 46d:	6c                   	insb   (%dx),%es:(%edi)
- 46e:	65 6e                	outsb  %gs:(%esi),(%dx)
- 470:	00 65 5f             	add    %ah,0x5f(%ebp)
- 473:	73 68                	jae    4dd <PR_BOOTABLE+0x45d>
- 475:	6e                   	outsb  %ds:(%esi),(%dx)
- 476:	75 6d                	jne    4e5 <PR_BOOTABLE+0x465>
- 478:	00 6d 6f             	add    %ch,0x6f(%ebp)
- 47b:	64 73 5f             	fs jae 4dd <PR_BOOTABLE+0x45d>
- 47e:	63 6f 75             	arpl   %bp,0x75(%edi)
- 481:	6e                   	outsb  %ds:(%esi),(%dx)
- 482:	74 00                	je     484 <PR_BOOTABLE+0x404>
- 484:	5f                   	pop    %edi
- 485:	72 65                	jb     4ec <PR_BOOTABLE+0x46c>
- 487:	73 65                	jae    4ee <PR_BOOTABLE+0x46e>
- 489:	72 76                	jb     501 <PR_BOOTABLE+0x481>
- 48b:	65 64 00 62 6f       	gs add %ah,%fs:0x6f(%edx)
- 490:	6f                   	outsl  %ds:(%esi),(%dx)
- 491:	74 5f                	je     4f2 <PR_BOOTABLE+0x472>
- 493:	6c                   	insb   (%dx),%es:(%edi)
- 494:	6f                   	outsl  %ds:(%esi),(%dx)
- 495:	61                   	popa   
- 496:	64 65 72 5f          	fs gs jb 4f9 <PR_BOOTABLE+0x479>
- 49a:	6e                   	outsb  %ds:(%esi),(%dx)
- 49b:	61                   	popa   
- 49c:	6d                   	insl   (%dx),%es:(%edi)
- 49d:	65 00 76 62          	add    %dh,%gs:0x62(%esi)
- 4a1:	65 5f                	gs pop %edi
- 4a3:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
- 4aa:	63 65 5f             	arpl   %sp,0x5f(%ebp)
- 4ad:	73 65                	jae    514 <PR_BOOTABLE+0x494>
- 4af:	67 00 6d 6d          	add    %ch,0x6d(%di)
- 4b3:	61                   	popa   
- 4b4:	70 5f                	jo     515 <PR_BOOTABLE+0x495>
- 4b6:	6c                   	insb   (%dx),%es:(%edi)
- 4b7:	65 6e                	outsb  %gs:(%esi),(%dx)
- 4b9:	00 70 5f             	add    %dh,0x5f(%eax)
- 4bc:	61                   	popa   
- 4bd:	6c                   	insb   (%dx),%es:(%edi)
- 4be:	69 67 6e 00 61 70 6d 	imul   $0x6d706100,0x6e(%edi),%esp
- 4c5:	5f                   	pop    %edi
- 4c6:	74 61                	je     529 <PR_BOOTABLE+0x4a9>
- 4c8:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
- 4cc:	70 5f                	jo     52d <PR_BOOTABLE+0x4ad>
- 4ce:	70 61                	jo     531 <PR_BOOTABLE+0x4b1>
- 4d0:	00 73 65             	add    %dh,0x65(%ebx)
- 4d3:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
- 4d7:	73 5f                	jae    538 <PR_BOOTABLE+0x4b8>
- 4d9:	63 6f 75             	arpl   %bp,0x75(%edi)
- 4dc:	6e                   	outsb  %ds:(%esi),(%dx)
- 4dd:	74 00                	je     4df <PR_BOOTABLE+0x45f>
- 4df:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 4e2:	74 2f                	je     513 <PR_BOOTABLE+0x493>
- 4e4:	62 6f 6f             	bound  %ebp,0x6f(%edi)
- 4e7:	74 31                	je     51a <PR_BOOTABLE+0x49a>
- 4e9:	2f                   	das    
- 4ea:	65 78 65             	gs js  552 <PR_BOOTABLE+0x4d2>
- 4ed:	63 5f 6b             	arpl   %bx,0x6b(%edi)
- 4f0:	65 72 6e             	gs jb  561 <PR_BOOTABLE+0x4e1>
- 4f3:	65 6c                	gs insb (%dx),%es:(%edi)
- 4f5:	2e 53                	cs push %ebx
- 4f7:	00                   	.byte 0x0
+ 463:	70 68                	jo     4cd <PR_BOOTABLE+0x44d>
+ 465:	6e                   	outsb  %ds:(%esi),(%dx)
+ 466:	75 6d                	jne    4d5 <PR_BOOTABLE+0x455>
+ 468:	00 73 69             	add    %dh,0x69(%ebx)
+ 46b:	67 6e                	outsb  %ds:(%si),(%dx)
+ 46d:	61                   	popa   
+ 46e:	74 75                	je     4e5 <PR_BOOTABLE+0x465>
+ 470:	72 65                	jb     4d7 <PR_BOOTABLE+0x457>
+ 472:	00 76 62             	add    %dh,0x62(%esi)
+ 475:	65 5f                	gs pop %edi
+ 477:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
+ 47e:	63 65 5f             	arpl   %sp,0x5f(%ebp)
+ 481:	6c                   	insb   (%dx),%es:(%edi)
+ 482:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 484:	00 65 5f             	add    %ah,0x5f(%ebp)
+ 487:	73 68                	jae    4f1 <PR_BOOTABLE+0x471>
+ 489:	6e                   	outsb  %ds:(%esi),(%dx)
+ 48a:	75 6d                	jne    4f9 <PR_BOOTABLE+0x479>
+ 48c:	00 6d 6f             	add    %ch,0x6f(%ebp)
+ 48f:	64 73 5f             	fs jae 4f1 <PR_BOOTABLE+0x471>
+ 492:	63 6f 75             	arpl   %bp,0x75(%edi)
+ 495:	6e                   	outsb  %ds:(%esi),(%dx)
+ 496:	74 00                	je     498 <PR_BOOTABLE+0x418>
+ 498:	5f                   	pop    %edi
+ 499:	72 65                	jb     500 <PR_BOOTABLE+0x480>
+ 49b:	73 65                	jae    502 <PR_BOOTABLE+0x482>
+ 49d:	72 76                	jb     515 <PR_BOOTABLE+0x495>
+ 49f:	65 64 00 62 6f       	gs add %ah,%fs:0x6f(%edx)
+ 4a4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 4a5:	74 5f                	je     506 <PR_BOOTABLE+0x486>
+ 4a7:	6c                   	insb   (%dx),%es:(%edi)
+ 4a8:	6f                   	outsl  %ds:(%esi),(%dx)
+ 4a9:	61                   	popa   
+ 4aa:	64 65 72 5f          	fs gs jb 50d <PR_BOOTABLE+0x48d>
+ 4ae:	6e                   	outsb  %ds:(%esi),(%dx)
+ 4af:	61                   	popa   
+ 4b0:	6d                   	insl   (%dx),%es:(%edi)
+ 4b1:	65 00 76 62          	add    %dh,%gs:0x62(%esi)
+ 4b5:	65 5f                	gs pop %edi
+ 4b7:	69 6e 74 65 72 66 61 	imul   $0x61667265,0x74(%esi),%ebp
+ 4be:	63 65 5f             	arpl   %sp,0x5f(%ebp)
+ 4c1:	73 65                	jae    528 <PR_BOOTABLE+0x4a8>
+ 4c3:	67 00 6d 6d          	add    %ch,0x6d(%di)
+ 4c7:	61                   	popa   
+ 4c8:	70 5f                	jo     529 <PR_BOOTABLE+0x4a9>
+ 4ca:	6c                   	insb   (%dx),%es:(%edi)
+ 4cb:	65 6e                	outsb  %gs:(%esi),(%dx)
+ 4cd:	00 70 5f             	add    %dh,0x5f(%eax)
+ 4d0:	61                   	popa   
+ 4d1:	6c                   	insb   (%dx),%es:(%edi)
+ 4d2:	69 67 6e 00 61 70 6d 	imul   $0x6d706100,0x6e(%edi),%esp
+ 4d9:	5f                   	pop    %edi
+ 4da:	74 61                	je     53d <PR_BOOTABLE+0x4bd>
+ 4dc:	62 6c 65 00          	bound  %ebp,0x0(%ebp,%eiz,2)
+ 4e0:	70 5f                	jo     541 <PR_BOOTABLE+0x4c1>
+ 4e2:	70 61                	jo     545 <PR_BOOTABLE+0x4c5>
+ 4e4:	00 73 65             	add    %dh,0x65(%ebx)
+ 4e7:	63 74 6f 72          	arpl   %si,0x72(%edi,%ebp,2)
+ 4eb:	73 5f                	jae    54c <PR_BOOTABLE+0x4cc>
+ 4ed:	63 6f 75             	arpl   %bp,0x75(%edi)
+ 4f0:	6e                   	outsb  %ds:(%esi),(%dx)
+ 4f1:	74 00                	je     4f3 <PR_BOOTABLE+0x473>
+ 4f3:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 4f6:	74 2f                	je     527 <PR_BOOTABLE+0x4a7>
+ 4f8:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+ 4fb:	74 31                	je     52e <PR_BOOTABLE+0x4ae>
+ 4fd:	2f                   	das    
+ 4fe:	65 78 65             	gs js  566 <PR_BOOTABLE+0x4e6>
+ 501:	63 5f 6b             	arpl   %bx,0x6b(%edi)
+ 504:	65 72 6e             	gs jb  575 <PR_BOOTABLE+0x4f5>
+ 507:	65 6c                	gs insb (%dx),%es:(%edi)
+ 509:	2e 53                	cs push %ebx
+ 50b:	00                   	.byte 0x0
 
 Disassembly of section .debug_line_str:
 
@@ -6349,52 +6345,62 @@ Disassembly of section .debug_line_str:
    6:	73 61                	jae    69 <PROT_MODE_DSEG+0x59>
    8:	72 61                	jb     6b <PROT_MODE_DSEG+0x5b>
    a:	6a 2f                	push   $0x2f
-   c:	79 61                	jns    6f <PROT_MODE_DSEG+0x5f>
-   e:	6c                   	insb   (%dx),%es:(%edi)
-   f:	65 2d 63 70 73 63    	gs sub $0x63737063,%eax
-  15:	34 32                	xor    $0x32,%al
-  17:	32 2f                	xor    (%edi),%ch
-  19:	6d                   	insl   (%dx),%es:(%edi)
-  1a:	63 65 72             	arpl   %sp,0x72(%ebp)
-  1d:	74 69                	je     88 <PR_BOOTABLE+0x8>
-  1f:	6b 6f 73 00          	imul   $0x0,0x73(%edi),%ebp
-  23:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  26:	74 2f                	je     57 <PROT_MODE_DSEG+0x47>
-  28:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  2b:	74 31                	je     5e <PROT_MODE_DSEG+0x4e>
-  2d:	00 62 6f             	add    %ah,0x6f(%edx)
-  30:	6f                   	outsl  %ds:(%esi),(%dx)
-  31:	74 31                	je     64 <PROT_MODE_DSEG+0x54>
-  33:	2e 53                	cs push %ebx
-  35:	00 62 6f             	add    %ah,0x6f(%edx)
-  38:	6f                   	outsl  %ds:(%esi),(%dx)
-  39:	74 2f                	je     6a <PROT_MODE_DSEG+0x5a>
-  3b:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  3e:	74 31                	je     71 <PROT_MODE_DSEG+0x61>
-  40:	2f                   	das    
-  41:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  44:	74 31                	je     77 <PROT_MODE_DSEG+0x67>
-  46:	6c                   	insb   (%dx),%es:(%edi)
-  47:	69 62 2e 63 00 62 6f 	imul   $0x6f620063,0x2e(%edx),%esp
-  4e:	6f                   	outsl  %ds:(%esi),(%dx)
-  4f:	74 31                	je     82 <PR_BOOTABLE+0x2>
-  51:	6c                   	insb   (%dx),%es:(%edi)
-  52:	69 62 2e 68 00 62 6f 	imul   $0x6f620068,0x2e(%edx),%esp
-  59:	6f                   	outsl  %ds:(%esi),(%dx)
-  5a:	74 2f                	je     8b <PR_BOOTABLE+0xb>
-  5c:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  5f:	74 31                	je     92 <PR_BOOTABLE+0x12>
-  61:	2f                   	das    
-  62:	62 6f 6f             	bound  %ebp,0x6f(%edi)
-  65:	74 31                	je     98 <PR_BOOTABLE+0x18>
-  67:	6d                   	insl   (%dx),%es:(%edi)
-  68:	61                   	popa   
-  69:	69 6e 2e 63 00 65 78 	imul   $0x78650063,0x2e(%esi),%ebp
-  70:	65 63 5f 6b          	arpl   %bx,%gs:0x6b(%edi)
-  74:	65 72 6e             	gs jb  e5 <PR_BOOTABLE+0x65>
-  77:	65 6c                	gs insb (%dx),%es:(%edi)
-  79:	2e 53                	cs push %ebx
-  7b:	00                   	.byte 0x0
+   c:	4f                   	dec    %edi
+   d:	53                   	push   %ebx
+   e:	5f                   	pop    %edi
+   f:	4c                   	dec    %esp
+  10:	61                   	popa   
+  11:	62 73 5f             	bound  %esi,0x5f(%ebx)
+  14:	46                   	inc    %esi
+  15:	69 6e 61 6c 2f 6c 61 	imul   $0x616c2f6c,0x61(%esi),%ebp
+  1c:	62 32                	bound  %esi,(%edx)
+  1e:	5f                   	pop    %edi
+  1f:	73 6f                	jae    90 <PR_BOOTABLE+0x10>
+  21:	6c                   	insb   (%dx),%es:(%edi)
+  22:	75 74                	jne    98 <PR_BOOTABLE+0x18>
+  24:	69 6f 6e 2f 6c 61 62 	imul   $0x62616c2f,0x6e(%edi),%ebp
+  2b:	32 2f                	xor    (%edi),%ch
+  2d:	6d                   	insl   (%dx),%es:(%edi)
+  2e:	63 65 72             	arpl   %sp,0x72(%ebp)
+  31:	74 69                	je     9c <PR_BOOTABLE+0x1c>
+  33:	6b 6f 73 00          	imul   $0x0,0x73(%edi),%ebp
+  37:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  3a:	74 2f                	je     6b <PROT_MODE_DSEG+0x5b>
+  3c:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  3f:	74 31                	je     72 <PROT_MODE_DSEG+0x62>
+  41:	00 62 6f             	add    %ah,0x6f(%edx)
+  44:	6f                   	outsl  %ds:(%esi),(%dx)
+  45:	74 31                	je     78 <PROT_MODE_DSEG+0x68>
+  47:	2e 53                	cs push %ebx
+  49:	00 62 6f             	add    %ah,0x6f(%edx)
+  4c:	6f                   	outsl  %ds:(%esi),(%dx)
+  4d:	74 2f                	je     7e <PROT_MODE_DSEG+0x6e>
+  4f:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  52:	74 31                	je     85 <PR_BOOTABLE+0x5>
+  54:	2f                   	das    
+  55:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  58:	74 31                	je     8b <PR_BOOTABLE+0xb>
+  5a:	6c                   	insb   (%dx),%es:(%edi)
+  5b:	69 62 2e 63 00 62 6f 	imul   $0x6f620063,0x2e(%edx),%esp
+  62:	6f                   	outsl  %ds:(%esi),(%dx)
+  63:	74 31                	je     96 <PR_BOOTABLE+0x16>
+  65:	6c                   	insb   (%dx),%es:(%edi)
+  66:	69 62 2e 68 00 62 6f 	imul   $0x6f620068,0x2e(%edx),%esp
+  6d:	6f                   	outsl  %ds:(%esi),(%dx)
+  6e:	74 2f                	je     9f <PR_BOOTABLE+0x1f>
+  70:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  73:	74 31                	je     a6 <PR_BOOTABLE+0x26>
+  75:	2f                   	das    
+  76:	62 6f 6f             	bound  %ebp,0x6f(%edi)
+  79:	74 31                	je     ac <PR_BOOTABLE+0x2c>
+  7b:	6d                   	insl   (%dx),%es:(%edi)
+  7c:	61                   	popa   
+  7d:	69 6e 2e 63 00 65 78 	imul   $0x78650063,0x2e(%esi),%ebp
+  84:	65 63 5f 6b          	arpl   %bx,%gs:0x6b(%edi)
+  88:	65 72 6e             	gs jb  f9 <PR_BOOTABLE+0x79>
+  8b:	65 6c                	gs insb (%dx),%es:(%edi)
+  8d:	2e 53                	cs push %ebx
+  8f:	00                   	.byte 0x0
 
 Disassembly of section .debug_loclists:
 
