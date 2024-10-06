@@ -140,6 +140,6 @@ void pmem_init(unsigned int mbi_addr)
                 break;
             }
         }
-    }
+    } 
 }
 
